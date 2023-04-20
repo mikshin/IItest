@@ -1,0 +1,336 @@
+@import (reference) '../common/variables.less';
+
+.vacancy {
+
+    @media @mq-desktop {
+        
+        .vacancy__payment {
+            font-size: 17px;
+            font-size: 1.4vw;
+
+            strong {
+                font-size: 28px;
+                font-size: 2vw;
+
+                span:after {
+                    font-size: 28px;
+                    font-size: 2vw;
+                }
+            }
+        }
+
+        .vacancy__description,
+        .vacancy__location {
+            font-size: 17px;
+            font-size: 1.4vw;
+        }
+    }
+
+    @media @mq-sm-c-desktop {
+        .vacancy__payment {
+            font-size: 20px;
+            
+
+            strong {
+                font-size: 28px;
+                
+                span:after {
+                    font-size: 28px;
+                    
+                }
+            }
+        }
+
+        .vacancy__description,
+        .vacancy__location {
+            font-size: 20px;
+        }
+    }
+
+    .vacancy-list & {
+
+        margin-bottom: 60px;
+        flex-basis: 33.333%;
+        position: relative;
+        background-color: #fff;
+    
+        &:before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-color: @dark;
+            transform: translateX(-50%);
+            opacity: .1;
+        }
+    }
+
+    // &:first-child,
+    // &:nth-child(n+4):nth-child(4n+3) {
+    //     &::before {
+    //         display: none;
+    //     }
+    // }
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        box-shadow: 0 3px 20px 3px rgba(@blue, .15);
+    }
+
+    &:nth-child(3n+4)>.vacancy__header,
+    &:nth-child(n+1)>.vacancy__header {
+        background-color: @blue-pale;
+    }
+
+    &:nth-child(2n)>.vacancy__header {
+        background-color: @blue-bright;
+    }
+
+    &:nth-child(3n+3)>.vacancy__header {
+        background-color: @blue-brightest;
+    }
+
+    @media @mq-tablet {
+        flex-basis: unset;
+        width: 100%;
+    }
+}
+
+.vacancy-list {
+    display: flex;
+    flex-wrap: wrap;
+    .page--product & {
+        padding-left: @content-block-left-inner-offset--fb;
+        padding-left: @content-block-left-inner-offset;
+        padding-right: @content-block-right-offset--fb;
+        padding-right: @content-block-right-offset; 
+        padding-top: @content-block-top-inner-offset--fb;
+        padding-top: @content-block-top-inner-offset;
+    }
+}
+
+.vacancy-list--price {
+    justify-content: space-between;
+
+    @media @mq-sm-desktop {
+        // justify-content: center;
+    }
+    .vacancy {
+        flex-basis: calc((100% / 4) - 20px);
+        box-shadow: 1px 8px 23px lightgray;
+
+        @media (max-width: 1240px) and @mq-not-xs-desktop {
+            flex-basis: calc((100% / 4) - 20px);
+        }
+
+        @media @mq-sm-desktop {
+            flex-basis: calc((100% / 3) - 20px);
+        }
+
+        @media @mq-xs-desktop {
+            flex-basis: calc((100% / 2) - 20px);
+        }
+
+        @media @mq-tablet {
+            flex-basis: 100%;
+        }
+    }
+    .vacancy:not(:last-child) {
+        margin-right: 20px;
+
+        @media @mq-sm-desktop {
+            margin-right: 0;
+        }
+
+        @media (max-width: 900px) {
+            margin-right: 0;
+        }
+    }
+
+    .vacancy__header {
+        // border-top-left-radius: 8px;
+        // border-top-right-radius: 8px;
+        background: @blue-brightest !important;
+        min-height: 150px;
+        max-height: 150px;
+        padding-right: 30px;
+        padding-left: 30px;
+
+        @media @mq-phone {
+            min-height: 0;
+        }
+        
+        .vacancy__title {
+            text-transform: uppercase;
+
+            @media @mq-phone {
+                font-size: 22px;
+                line-height: 1;
+            }
+        }
+    }
+    
+    .vacancy__content {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 90px; 
+
+        .vacancy__description {
+            @media @mq-phone {
+                font-size: 14px;
+            }
+        }
+
+        .vacancy__space {
+            .vacancy__payment;
+            margin-top: 26px;
+            margin-bottom: 26px;
+
+            
+            &>strong {
+                display: inline;
+            }
+        }
+    }
+
+    .vacancy__action {
+        width: 100%;
+        position: absolute;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 45px; // Чтобы был отступ внизу
+        left: 0;
+        bottom: 0;
+        
+        .button {
+            min-width: 0; // иначе перебивают настройки buttons.less:35
+            width: 100% !important;
+        }
+    } 
+    
+    
+}
+
+.vacancy__header {
+    background-color: @blue-pale;
+    min-height: 170px;
+    padding: 30px 40px 30px 40px;
+    text-transform: uppercase;
+}
+
+
+.vacancy-list .vacancy__title {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 0;
+    letter-spacing: 1.1px;
+    line-height: 36px;
+    .condensed;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.vacancy__content {
+    background-color: #fff;
+    padding: 40px 40px 56px 40px;
+}
+
+.vacancy__payment {
+    color: @dark;
+    font-size: 18px;
+    margin: 0;
+
+    >strong {
+        display: block;
+        padding: 0;
+        letter-spacing: 1.2px;
+        color: @blue-bright;
+        font-size: 30px;
+    }
+
+
+}
+
+.vacancy__description {
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: @dark;
+    font-size: 18px;
+}
+
+.vacancy__location {
+    margin-top: 20px;
+    color: @dark;
+    font-size: 18px;
+}
+
+.vacancy__action {
+    display: flex;
+    justify-content: center;
+}
+
+.vacancy-form {
+    margin-top: 30px;
+    
+    output {
+        display:none;
+    }
+}
+
+.vacancy__footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    >h2 {
+        margin: 0;
+        color: white;
+        text-transform: none;
+        flex-basis: 50%;
+    }
+
+    >.legend {
+        position: relative;
+        flex-basis: 48%;
+        .condensed(600);
+        color: @white;
+
+        // @media @mq-sm-c-desktop {
+        //     color: @white;
+        // }
+    }
+}
+
+.vacancy__location {
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 16px;
+
+    &:before {
+        content: "";
+        width: 16px;
+        height: 22px;
+        background: url(../images/icons/location.svg);
+        background-size: 16px 22px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

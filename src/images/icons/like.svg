@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 57 54">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #004dc9;
+        stroke-miterlimit: 10;
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #004dc9;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.225" y1="0.176" x2="0.881" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#d4e4fe"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_6415" data-name="Group 6415" transform="translate(-349 -3141.998)">
+    <path id="Path_11531" data-name="Path 11531" class="cls-1" d="M.5,48.069V21.153H12.088V50.437H47.629L53.2,18.487H32.381V5.287S31.157,1.626,28.949.86A13.626,13.626,0,0,0,23.607.551V10.926a8.468,8.468,0,0,1-1.979,5.262A43.1,43.1,0,0,1,17.361,20" transform="translate(350.5 3143.216)"/>
+    <circle id="Ellipse_264" data-name="Ellipse 264" class="cls-2" cx="2" cy="2" r="2" transform="translate(349 3187.998)"/>
+    <circle id="Ellipse_265" data-name="Ellipse 265" class="cls-2" cx="2" cy="2" r="2" transform="translate(360 3191.998)"/>
+    <circle id="Ellipse_266" data-name="Ellipse 266" class="cls-2" cx="2" cy="2" r="2" transform="translate(396 3191.998)"/>
+    <circle id="Ellipse_267" data-name="Ellipse 267" class="cls-2" cx="2" cy="2" r="2" transform="translate(402 3159.998)"/>
+    <circle id="Ellipse_269" data-name="Ellipse 269" class="cls-2" cx="2" cy="2" r="2" transform="translate(381 3159.998)"/>
+    <circle id="Ellipse_270" data-name="Ellipse 270" class="cls-2" cx="2" cy="2" r="2" transform="translate(360 3161.998)"/>
+    <circle id="Ellipse_272" data-name="Ellipse 272" class="cls-2" cx="2" cy="2" r="2" transform="translate(372 3141.998)"/>
+    <circle id="Ellipse_271" data-name="Ellipse 271" class="cls-2" cx="2" cy="2" r="2" transform="translate(349 3161.998)"/>
+    <circle id="Ellipse_268" data-name="Ellipse 268" class="cls-2" cx="2" cy="2" r="2" transform="translate(366 3160.998)"/>
+  </g>
+</svg>

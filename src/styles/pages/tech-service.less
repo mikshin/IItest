@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    
+    src: local('robotocondensed-regular'),
+    url('../fonts/RobotoCondensed/robotocondensed-regular.woff2') format('woff2'), 
+    url('../fonts/RobotoCondensed/robotocondensed-regular.woff') format('woff'),
+    url('../fonts/RobotoCondensed/robotocondensed-regular.ttf') format('truetype'),
+    url('../fonts/RobotoCondensed/robotocondensed-regular.eot') format('eot');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    
+    src: local('robotocondensed-bold'),
+    url('../fonts/RobotoCondensed/robotocondensed-bold.woff2') format('woff2'), 
+    url('../fonts/RobotoCondensed/robotocondensed-bold.woff') format('woff'),
+    url('../fonts/RobotoCondensed/robotocondensed-bold.ttf') format('truetype'),
+    url('../fonts/RobotoCondensed/robotocondensed-bold.eot') format('eot');
+}
+
+
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+body {
+    // height: 100vh;
+    position: relative;
+    background-image: url(../../images/tech-service.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    // background-size;
+
+    @media (max-height: 800px) {
+        background-size: 50% 50%;
+    }
+
+    @media (max-width: 576px) {
+        background-size: 50% 50%;
+    }
+}
+
+.tech-info {
+    position: absolute;
+    top: auto;
+    bottom: 20vh;
+    // margin-left: auto;
+    // margin-right: auto;
+    margin: auto;
+    left: 0;
+    right: 0;
+    max-width: 700px;
+
+    @media (max-height: 800px) {
+        bottom: 7vh;
+    }
+
+    @media (max-width: 576px) and (min-height: 800px)  {
+        bottom: 30vh;
+    }
+
+    span {
+        font-family: 'Roboto Condensed', sans-serif;
+        display: block;
+        text-align: center;
+    }
+
+    .tech-info__1 {
+        color: #1F3550;
+        font-weight: 400;
+        font-size: 24px;
+
+        @media (max-width: 992px) {
+            font-size: 20px;
+        }
+    }
+
+    .tech-info__2 {
+        color: #004DC9;
+        font-weight: 700;
+        font-size: 32px;
+
+        @media (max-width: 992px) {
+            font-size: 26px;
+        }
+    }
+
+}

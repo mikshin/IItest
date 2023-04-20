@@ -1,0 +1,108 @@
+@import (reference) '../common/variables.less';
+
+// #region Breadcrumbs
+.breadcrumbs {
+    display: none;
+    margin: 0;
+
+    .breadcrumbs__item {
+        &:hover {
+            .button.button--products {
+                background: transparent;
+
+                &:before {
+                    left: -3%;
+                    background-position-x: -122px;
+                    transition: left .3s ease;
+                }
+            }
+        }
+    }
+
+    .button.button--products {
+        border: transparent;
+        box-shadow: none;
+
+        &:before {
+            left: 0;
+            transform: translateY(-50%) scale(-1, 1);
+            transition: left .3s ease;
+        }
+    }
+
+    .breadcrumbs__title {
+        .condensed;
+        position: relative;
+        color: white;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 1px;
+
+        @media @mq-tablet {
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        @media @mq-phone {
+            font-size: 14px;
+            line-height: 14px;
+        }
+    }
+
+    @media @mq-tablet {
+        width: 100%;
+        padding-top: 24px;
+        font-size: 14px; 
+    }
+
+    @media @mq-phone {
+        padding-top: 10px;
+    }
+
+}
+
+.breadcrumbs-wrapper {
+    padding-left: @breadcrumbs-offset--fb;
+    padding-left: @breadcrumbs-offset;
+    padding-top: 100px;
+
+    .big-title {
+        color: #fff;
+        padding-bottom: 90px;
+        padding-top: 50px;
+        margin: 0;
+
+        @media @mq-tablet {
+            font-size: 45px;
+            margin: 0;
+            padding-bottom: 30px;
+            padding-top: 16px;
+        }
+
+        @media @mq-phone {
+            font-size: 23px;
+        }
+    }
+
+    @media @mq-tablet {
+        padding-top: 0;
+    }
+
+    @media @mq-phone {
+        position: relative;
+    }
+}
+
+.container--small {
+    .breadcrumbs-wrapper {
+        padding-left: @breadcrumbs-offset-small--fb;
+        padding-left: @breadcrumbs-offset-small;
+    }
+}
+
+.breadcrumbs-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+// #endregion Breadcrumbs

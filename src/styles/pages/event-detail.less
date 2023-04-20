@@ -1,0 +1,458 @@
+@import (reference) '../common/variables.less';
+
+.page--event-detail {
+    .sidebar {
+        @media @mq-desktop {
+            order: 1;
+        }
+
+        @media @mq-tablet {
+            .widget__title {
+                text-align: left;
+            }
+        }
+
+        @media @mq-phone {
+            .widget {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    @media @mq-phone {
+        .social-link {
+            margin-top: 10px;
+            margin-left: 40px;
+        }
+    }
+} 
+
+
+
+
+.news-preview { 
+    background-color: @gray-light;
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    h2 {
+        margin: 0;
+    }
+
+    .article {
+        // width: 33.333%;
+        // max-width: unset;
+        // min-width: unset;
+    }
+
+    .article-list {
+        & + .button {
+            margin-top: 50px;
+        }
+    }
+}
+
+.event-info {
+    width: 100%;
+    margin-bottom: 50px;    
+
+    @media @mq-phone {
+        margin-bottom: 20px;
+    }
+}
+
+.event-info__row {
+    
+    &:not(.event-info__row--map) {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        line-height: 30px;
+        position: relative;
+        padding-left: 160px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 80px;
+            @media  @mq-desktop and @mq-not-xs-desktop {
+                left: 40px;
+            }
+
+            @media @mq-tablet {
+                left: 34px;
+            }
+
+            @media @mq-phone {
+                display: none;
+            }
+        }
+    
+        @media @mq-desktop and @mq-not-xs-desktop {
+            padding: 32px 20px 32px 100px; 
+        }
+    }
+
+    em {
+        .condensed;
+        font-size: 30px;
+        font-style: normal;
+        
+        @media @mq-desktop {
+            font-size: 24px;
+        }
+
+        @media @mq-phone {
+            font-size: 18px;
+        }
+    }
+
+    span {
+        font-size: 18px;
+
+        @media @mq-tablet {
+            font-size: 16px;
+        }
+        
+        @media @mq-phone {
+            font-size: 13px;
+        }
+    }
+
+    &:not([class*="map"]) {
+        @media @mq-tablet {
+            padding-left: 100px;
+        }
+
+        @media @mq-phone {
+            padding-left: 16px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+}
+
+.event-info__row--when {
+    border-bottom: 1px solid @blue-bright;
+
+    &::before {
+        background-image: url(../images/icons/event-when.svg);
+        width: 58px;
+        height: 52px;
+        
+    }
+
+}
+
+.event-info__row--where {
+    &::before {
+        background-image: url(../images/icons/event-where.svg);
+        width: 43px;
+        height: 68px;
+    }
+}
+
+.event-info__row--map {
+    iframe {
+        border: none;
+        width: 100%;
+    }
+
+    @media (max-height: 840px) {
+        display: none;
+    }
+}
+
+
+
+
+
+
+// #region Schedule
+
+@schedule-blue-part-width: 300px;
+@schedule-blue-part-width--tablet: 240px;
+@schedule-blue-part-width--phone: 64px;
+
+
+.schedule {
+    // width: 100%;
+    @media @mq-tablet {
+        padding-right: 20px;
+    }
+
+    h2 + & {
+        margin-top: @content-block-top-small-inner-offset--fb;
+        margin-top: @content-block-top-small-inner-offset;
+    }
+}
+
+.schedule__item {
+    position: relative;
+    padding-top: @content-block-top-middle-inner-offset--fb;
+    padding-top: @content-block-top-middle-inner-offset;
+    padding-bottom: 20px;
+    min-height: @content-block-top-middle-inner-offset--fb;
+    min-height: @content-block-top-middle-inner-offset;
+
+    @media @mq-tablet {
+        // font-size: 16px;
+    }
+
+    @media @mq-phone {
+        padding-top: 20px;
+    }
+
+    &:last-child {
+        padding-bottom: @content-block-top-middle-inner-offset--fb;
+        padding-bottom: @content-block-top-middle-inner-offset;
+    }
+
+    &:before {
+        content: "";
+        height: 100%;
+        left: @schedule-blue-part-width;
+        top: 0;
+        position: absolute;
+        width: calc(@main-offset-width ~"+" @schedule-blue-part-width + @content-block-left-offset); 
+        background: @blue-brightest;
+        transform: translateX(-100%);
+        
+        @media @mq-desktop {
+            width: 100%; 
+        }
+
+        @media @mq-tablet {
+            
+            left: @schedule-blue-part-width--tablet;
+            
+        }
+
+        @media @mq-phone {
+            left: @schedule-blue-part-width--phone;
+        }
+    }
+}
+
+.schedule__event {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 0;
+
+    
+}
+
+.event__time {
+    .condensed;
+    font-size: 30px; 
+    font-weight: 700;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    @media @mq-tablet {
+        font-size: 24px;
+        padding-left: 96px;
+        text-align: center;
+        
+    }
+
+    @media @mq-phone {
+        padding-left: 4px;
+        padding-right: 4px;
+        font-size: 14px;
+    }
+
+    
+}
+
+.event__title {
+    color: @blue;
+    font-size: 20px;
+    .condensed;
+    font-weight: 700;
+    padding-left: 40px;
+    padding-right: 20px;
+    flex-grow: 0;
+
+    @media @mq-tablet {
+        font-size: 18px;
+    }
+
+    @media @mq-phone {
+        font-size: 16px;
+    }
+}
+
+.person__photo-wrapper,
+.event__time {
+    background-color: @blue-brightest;
+    width: @schedule-blue-part-width;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-shrink: 0;
+
+    @media @mq-tablet {
+        width: @schedule-blue-part-width--tablet;
+    }
+
+    @media @mq-phone {
+        width: @schedule-blue-part-width--phone;
+    }
+}
+
+
+
+.schedule__person {
+    display: flex;
+    flex-direction: row;
+    
+    .person__photo {
+        width: 70px;
+        height: 70px; 
+        position: relative;
+
+        &:before {
+            content: "";
+            background-color: @blue;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 208px; // 28px - 4px / 2
+            transform: translate(0, -50%);
+            z-index: 10;
+
+            @media @mq-tablet {
+                left: 145px;
+            }
+
+            @media @mq-phone {
+                left: 80px;
+            }
+        }
+
+        &:after {
+            content: "";
+            width: calc(@schedule-blue-part-width ~'/' 2 ~'+' 28px ~'-' 35px);
+            height: 1px;
+            background-color: @blue-light;
+            position: absolute;
+            left: 212px;
+            top: 50%;
+            transform: translate(-100%, -50%);
+            z-index: 5;
+
+            @media @mq-tablet {
+                width: 75px;
+                left: 145px;
+            }
+        
+            @media @mq-phone {
+                // width: @schedule-blue-part-width--phone;
+                width: 40px;
+                left: 80px;
+            }
+        }
+
+        @media @mq-phone {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .person__photo-inner {
+        width: 70px;
+        height: 70px; 
+        border-radius: 50%;
+        border: 2px solid @blue-light;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            .object-fit-cover;
+        }
+
+        @media @mq-phone {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .person__photo-wrapper {
+        position: relative;
+
+        @media @mq-tablet {
+            padding-left: 56px;
+        }
+
+        @media @mq-phone {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+    }
+
+    .person__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 40px;
+
+        position: relative;
+
+        @media @mq-tablet {
+            flex: 1;
+        }
+    }
+
+    .info__name {
+        color: @dark;
+        font-size: 18px;
+        .condensed;
+        font-weight: 700;
+        line-height: 28px;
+
+        @media @mq-tablet {
+            font-size: 16px;
+        }
+    
+        @media @mq-phone {
+            font-size: 14px;
+            line-height: 26px;
+        }
+    }
+
+    .info__position {
+        color: fade(@dark, 50%);
+        font-size: 14px;
+        line-height: 28px;
+    
+        @media @mq-phone {
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+}
+
+.schedule__person + .schedule__event {
+    margin-top: 10px;
+}
+
+// #endregion Schedule

@@ -1,0 +1,249 @@
+@import (reference) '../common/variables.less';
+
+
+// 176px + 80px = 256px;
+@about-title-height: 256px;
+// Половина
+@about-top-offset: 128px;
+
+
+.page-title {
+    display: block;
+    color: #fff;
+    .condensed;
+	position: absolute;
+    font-size: 70px;
+    top: 176px;
+    left: calc(33.333% ~'-' 320px);
+    margin: 0;
+    z-index: 100;
+    letter-spacing: 3px;
+
+    @media @mq-sm-desktop {
+        left: 100px;
+        width: 100%;
+        text-align: left;
+        top: 50px;
+        font-size: 45px;
+    }
+
+    @media @mq-phone {
+        left: 56px;
+        top: 34px;
+        font-size: 23px;
+    }
+}
+
+.menu {
+    width: 100%;
+    background-color: #0949ba;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    width: 100%;
+	flex-direction: row;
+	margin: 0;
+    padding: 0;
+
+    @media @mq-sm-desktop {
+        flex-direction: column;
+    }
+}
+
+.menu-item {
+    flex-grow: 1;
+    width: 33.333%;
+    text-align: right;
+    position: relative;
+    background: linear-gradient(to right, #186cf3, #0949ba);
+    transition: 0.25s;
+
+    @media @mq-sm-desktop {
+        width: 100%;
+    }
+}
+
+
+
+.menu-item__link {
+    font-size: 50px;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+    .condensed;
+    line-height: 60px;
+    display: block;
+    background-repeat: no-repeat;
+    transition: 0.25s;
+    height: 100vh;
+    position: relative;
+    z-index: 10;
+    box-shadow: -20px 0px 40px rgba(0, 0, 0, 0.16);
+
+    @media @mq-sm-desktop {
+        font-size: 45px;
+    }
+
+    @media @mq-phone  {
+        font-size: 40px;
+        line-height: 1;
+        height: 40vh;
+    }
+
+    @media @mq-sm-phone {
+        font-size: 22px;
+    }
+    
+    &:hover,
+    &:focus {
+        color: #fc8a23;
+        /*cursor: url(../img/4template/cursor.cur), url(../img/4template/cursor.png), pointer;*/
+        outline: none;
+        border: none;
+        // background: linear-gradient(to right, #004dc9, #0949ba);
+        
+        .menu-item__text:not(.menu-item__text--dark) {
+            right: 15%;
+
+            @media @mq-sm-desktop and @mq-not-phone {
+                margin-top: 50px;
+            }
+
+            @media @mq-phone {
+                right: 0;
+            }
+        }
+
+        &:before {
+            transform: translateX(0%);
+
+            @media @mq-sm-desktop {
+                transform: translateX(15%);
+            }
+
+            @media @mq-phone  {
+                transform: translateY(0%);
+            }
+        }
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        height: calc(100vh ~'-' @about-title-height ~'-' 42px ~'-' 42px);
+        width: 70%;
+        position: absolute;
+        top: calc(@about-title-height ~'+' 42px);
+        right: 0;
+        z-index: 0;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: left center;
+        transition: .35s ease transform;
+        transform: translateX(25%);
+
+
+        @media @mq-sm-desktop {
+            transform: translateX(50%);
+            height: 90%;
+            top: 5%;
+        }
+
+        @media @mq-phone  {
+            transform: translateY(15%);
+            bottom: 0;
+            width: 80%;
+            top: auto;
+            left: 10%;
+            height: 85%;
+            background-size: 100% auto;
+            background-position: top center;
+        }
+    }
+
+    &.menu-item__link--history {
+        background: linear-gradient(135deg, #004dc9, #251CAE);
+
+        &:before {
+            background-image: url(../images/about/history.svg);
+            // background-position: 690% 75%;
+
+            @media @mq-phone  {
+                height: 50%;
+            }
+        }
+    }
+    
+    &.menu-item__link--mission {
+        background: linear-gradient(135deg, #0C5BD9, #0341CC);
+
+        &:before {
+            background-image: url(../images/about/mission.svg);
+        }
+    } 
+    
+    &.menu-item__link--command {
+        background: linear-gradient(135deg, #186CF4, #0554D3);
+
+        &:before {
+            background-image: url(../images/about/command.svg);
+        }
+    }
+
+    &.menu-item__link--dictionary {
+        background: linear-gradient(135deg, #186CF4, #0554D3);
+
+        &:before {
+            background-image: url(../images/about/book.svg);
+        }
+    }
+}
+
+
+.menu-item__text {
+    display: inline-flex;
+    position: absolute;
+    min-height: 120px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-top: @about-top-offset;
+    overflow: hidden;
+    z-index: 200;
+    transition: .25s color ease, .65s ease right;
+    text-transform: uppercase;
+    
+    @media @mq-sm-desktop and @mq-not-phone {
+        margin-top: 50px;
+    }
+    
+    @media @mq-phone {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+    &.menu-item__text--dark {
+        display: inline-flex;
+        text-align: left;
+        font-size: 114px;
+        color: fade(#000, 10%);
+        opacity: 1;
+        line-height: 107px;
+        overflow: hidden;
+        margin-top: 0;
+        right: auto;
+        top: auto;
+        left: -8px;
+        bottom: -8px;
+        transform-origin: 0 100%;
+        transform: rotate(-90deg) translate(0, 100%);
+        z-index: 190;
+
+        @media @mq-phone  {
+            display: none;
+        }
+    }
+}
