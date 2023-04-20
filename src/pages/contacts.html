@@ -1,0 +1,293 @@
+//= templates/header.html
+<script>
+    var link = document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.type = 'text/css';
+    link.href = '/styles/contacts-styles.css';
+    document.head.appendChild(link);
+</script>
+<script>
+    var modalFeedbackTemplate = [
+        '<form action="" class="form form--light">',
+        '<div class="container container--small">',
+        '<h2>Заказать обратный звонок</h2>',
+        '<p>Заполните форму, и мы свяжемся с Вами.</p>',
+        '<div class="form-wrapper">',
+        '<label class="input-container">',
+        '<input type="text" placeholder="Ваше имя">',
+        '<span>Ваше имя</span>',
+        '</label>',
+        '<label class="input-container">',
+        '<input type="email" placeholder="Электронная почта">',
+        '<span>Электронная почта</span>',
+        '</label>',
+        '<label class="input-container">',
+        '<input type="tel" placeholder="Телефон">',
+        '<span>Телефон</span>',
+        '</label>',
+        '<div class="checkbox-container-wrapper">',
+        '<label class="checkbox-container">',
+        '<input type="checkbox" class="visually-hidden" required>',
+        '<span>Согласен на&nbsp;<a href="../files/ppd.pdf" target="_blank" title="Согласие на обработку персональных данных">обработку моих персональных данных</a></span>',
+        '</label>',
+        '</div>',
+        '<button class="button button--blue" type="submit">Отправить заявку</button>',
+        '<div class="form__error-message">',
+        '<span>Произошла ошибка при отправке, попробуйте обновить страницу и заполнить заново</span>',
+        '</div>',
+        '<div class="form__success-message">',
+        '<span>Вы успешно отправили заявку. Наши специалисты свяжутся с вами в ближайшее время!</span>',
+        '</div>',
+        '<div class="form__loading-message">',
+        '<span>Загрузка...</span>',
+        '</div>',
+        '</div>',
+        '</div>',
+        '</form>',
+    ].join("\r\n");
+
+    
+    var modalDemoTemplate = [
+        '<form action="" class="form form--light">',
+        '<div class="container container--small">',
+        '<h2>Демо</h2>',
+        '<p>Заполните форму, и мы свяжемся с Вами.</p>',
+        '<div class="form-wrapper">',
+        '<label class="input-container">',
+        '<input type="text" placeholder="Ваше имя">',
+        '<span>Ваше имя</span>',
+        '</label>',
+        '<label class="input-container">',
+        '<input type="email" placeholder="Электронная почта">',
+        '<span>Электронная почта</span>',
+        '</label>',
+        '<label class="input-container">',
+        '<input type="tel" placeholder="Телефон">',
+        '<span>Телефон</span>',
+        '</label>',
+        '<div class="checkbox-container-wrapper">',
+        '<label class="checkbox-container">',
+        '<input type="checkbox" class="visually-hidden" required>',
+        '<div class="contract">',
+        '<span class="contract__text">Согласен на&nbsp;</span>',
+        '<a href="../files/ppd.pdf" target="_blank" title="Согласие на обработку персональных данных">обработку моих персональных данных</a></div>',
+        '</label>',
+        '</div>',
+        '<button class="button button--blue" type="submit">Отправить заявку</button>',
+        '<div class="form__error-message">',
+        '<span>Произошла ошибка при отправке, попробуйте обновить страницу и заполнить заново</span>',
+        '</div>',
+        '<div class="form__success-message">',
+        '<span>Вы успешно отправили заявку. Наши специалисты свяжутся с вами в ближайшее время!</span>',
+        '</div>',
+        '<div class="form__loading-message">',
+        '<span>Загрузка...</span>',
+        '</div>',
+        '</div>',
+        '</div>',
+        '</form>',
+    ].join("\r\n");
+</script>
+<article class="article article--page page--contacts">
+    <div class="container">
+        <div class="article__page">
+
+            <div class="article__content">
+                <div class="content-block content-block--bottom-offset">
+                    <h1 class="title"><span>Связаться с нами</span></h1>
+                    <div class="contact-block">
+                        <div class="site-feedback">      
+                                <a class="site-feedback__link site-feedback__link--email" id="email" title="Написать" href="mailto:info@rospartner.ru" tabindex="0">
+                                    <nobr>info@rospartner.ru</nobr>
+                                </a>
+                                <a class="site-feedback__link" id="phone" title="Позвонить" href="tel:+74956650068" tabindex="0">
+                                    <nobr>+7 (495) 665-00-68</nobr>
+                                </a>       
+                        </div>
+                        <div class="main-info">
+                            <div class="social-link">
+                                <a class="social-link-button social-link-button--tg" href="javascript:void(0);">
+                                    <span class="visually-hidden">telegram</span>
+                                    <svg>
+                                        <use xlink:href="images/icons/sprite-icon.svg#telegram-icon"></use>
+                                    </svg>
+                                </a>
+                                <a class="social-link-button social-link-button--fb" href="javascript:void(0);">
+                                    <span class="visually-hidden">facebook</span>
+                                    <svg>
+                                        <use xlink:href="images/icons/sprite-icon.svg#facebook-icon"></use>
+                                    </svg>
+                                </a>
+                                <a class="social-link-button social-link-button--instagram" href="javascript:void(0);">
+                                    <span class="visually-hidden">instagram</span>
+                                    <svg>
+                                        <use xlink:href="images/icons/sprite-icon.svg#instagram-icon"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-block">
+                    <h2 class="map-block__title"><span>НАШИ ОФИСЫ</span></h2>
+                    <div class="address-list">    
+                        <div class="address-list__item">
+                                <div class="address-list__city">г. Дубна</div>
+                                
+                                        <div class="address-list__content"> 
+                                            <address class="address">“Особая экономическая зона”
+                                        ул. Программистов, 4, строение 2, офис 224</address>
+                            <div class="map">
+                                    <div class="map__wrap">
+                                <iframe class="yandex-map"
+                                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A695aa05d6cdfe5d5364f267c8e362a15d174f6e252508c4af666f6e67c93758d&amp;source=constructor"
+                                    width="264" height="264" frameborder="0"></iframe>
+                                    </div>
+                            </div>
+                            <button onclick="openContact('contact-1')" class="button--info"><span>узнать подробнее</span></button>
+                        </div>
+                        </div>
+                        <div class="address-list__item">
+                                <div class="address-list__city">г. Моcква</div>
+                                
+                                        <div class="address-list__content"> 
+                                            <address class="address">“Deworkacy”
+                                    ул. Большая Полянка 2/10 стр. 1, станция метро Полянка</address>
+                            <div class="map">
+                                    <div class="map__wrap">
+                                <iframe class="yandex-map"
+                                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A695aa05d6cdfe5d5364f267c8e362a15d174f6e252508c4af666f6e67c93758d&amp;source=constructor"
+                                    width="264" height="264" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                            <button onclick="openContact('contact-2')" class="button--info"><span>узнать подробнее</span></button>
+                        </div>
+                        </div>
+                        <div class="address-list__item">
+                                <div class="address-list__city">г. Иннополис</div>
+                                
+                                        <div class="address-list__content">  
+                                            <address class="address">“Иннополис”
+                                    ул. Университетская, д.7, оф. 601</address>
+                            <div class="map">
+                                    <div class="map__wrap">
+                                <iframe class="yandex-map"
+                                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A695aa05d6cdfe5d5364f267c8e362a15d174f6e252508c4af666f6e67c93758d&amp;source=constructor"
+                                    width="264" height="264" frameborder="0"></iframe>
+                                </div>
+                            </div>
+                            <button onclick="openContact('contact-3')" class="button--info"><span>узнать подробнее</span></button>
+                        </div>
+                        </div>
+                        <div class="address-list__item">
+                                <div class="address-list__city">г. Таганрог</div>
+                                
+                                    <div class="address-list__content"> 
+                                        <address class="address">“Интех”
+                                    Греческая улица, 104А</address>
+                            <div class="map">
+                                    <div class="map__wrap">
+                                <iframe class="yandex-map"
+                                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A695aa05d6cdfe5d5364f267c8e362a15d174f6e252508c4af666f6e67c93758d&amp;source=constructor"
+                                    width="264" height="264" frameborder="0"></iframe>
+                                </div>
+                            </div>
+                            <button onclick="openContact('contact-4')" class="button--info"><span>узнать подробнее</span></button>
+                        </div>
+                        </div>
+                       </div>
+                       </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<div style="display: none;">
+<div class="contact-content" id="contact-1">
+        <button class="button--close" type="button"></button>
+<div class="content-item">
+        <div class="address__city">г.Дубна</div>
+        <address class="address">“Особая экономическая зона”<br>
+                ул. Программистов, 4, строение 2, офис 224</address>
+        <div class="content-item__intro">Добраться из Москвы до Дубны можно выехав с Савёловского вокзала или м. 
+            Тимирязевская. До Дубны ходят электрички и комфортабельные автобусы с wi-fi.</div>
+    <h3 class="content-item__title  content-item__icon--bus">АВТОБУСЫ</h3>
+    <div class="content-item__descripton">
+        Автобусы до Дубны отходят от станции метро Тимирязевская. 
+        Примерная длительность поездки, без учета пробок, 2 часа. Вам необходимо доехать до станции «Большая Волга», 
+        от которой на автобусе или такси можно добраться 
+        до офиса. У водителя всегда можно попросить, чтобы подсказал, где выйти. 
+        Посмотреть расписание автобусов или купить билет можно на <a href="http://rata-express.ru/schedule/moscow ">сайте</a> перевозчика. 
+    </div>
+    <h3 class="content-item__title  content-item__icon--train">ЭЛЕКТРИЧКИ</h3>
+    <div class="content-item__descripton">
+        Актуальное расписание электричек из Москвы, а также стоимость и, 
+        при необходимости, приобретение билета, можно посмотреть в разделе <a href="https://www.tutu.ru/rasp.php?st1=28604&st2=32004">«Электрички».</a>  
+        Направление от Москва Савеловская до Большая Волга (г. Дубна). 
+        Примерное время поездки 2 часа 30 минут на обычной электричке, 2 часа на экспрессе.
+        Доехав до станции «Большая Волга», Вам нужно добраться до «Конгресс-центра» Особой экономической зоны либо (адрес: ул. Программистов, 4, Контрольно-пропускной пункт) 
+        на автобусе или такси.
+    </div>
+    <h3 class="content-item__title  content-item__icon--taxi">ТАКСИ</h3>
+    <div class="content-item__descripton">
+        Также до офиса можно добраться на яндекс-такси, набрав адрес офиса в <a href="https://taxi.yandex.ru/#index"> приложении. </a>
+    </div>
+</div>
+</div>
+<div class="contact-content" id="contact-2">
+        <button class="button--close" type="button"></button>
+        <div class="content-item">
+                <div class="address__city">г. Москва</div>
+                <address class="address">“Deworkacy”<br>
+                        ул. Большая Полянка 2/10 стр. 1, станция метро Полянка</address>
+            <h3 class="content-item__title  content-item__icon--metro">Метро</h3>
+            <div class="content-item__descripton">
+                    Самый простой способ доехать до офиса в Москве - воспользоваться метро. 
+                    Вам необходимо доехать до станции Полянка (серая ветка). Посмотреть карту метро Москвы и построить маршрут до станции можно <a href="https://yandex.ru/metro/moscow">здесь.</a>
+            </div>
+            <h3 class="content-item__title  content-item__icon--taxi">ТАКСИ</h3>
+            <div class="content-item__descripton">
+                Также до офиса можно добраться на яндекс-такси, набрав адрес офиса в <a href="https://taxi.yandex.ru/#index"> приложении. </a>
+            </div>
+            <h3 class="content-item__title  content-item__icon--office">УДОБСТВА РЯДОМ С ОФИСОМ</h3>
+            <div class="content-item__descripton">
+                    На первом этаже располагается уютная кухня, оснащенная кофемашиной, холодильником , чайником и большим обеденным столом. 
+                    Также на первом этаже можно приобрести воду, сок, печенье и шоколад. 
+                    Помимо этого рядом с офисом есть много мест,  куда также можно сходить пообедать: 
+                    Кофемания (в здании офиса), кафе на территории Красного Октября, Чайхона №1 (через дорогу), 
+                    Шоколадница (около м. Полянка). Для бронирования переговорных и по любым вопросам, которые у Вас возникнут - можно обращаться к администраторам на ресепшене.
+            </div>
+        </div>
+</div>
+<div class="contact-content" id="contact-3">
+        <button class="button--close" type="button"></button>
+        <div class="content-item">
+                <div class="address__city">г. Иннополис</div>
+                <address class="address">“Иннополис”<br>
+                        ул. Университетская, д.7, оф. 601</address>
+            <h3 class="content-item__title  content-item__icon--taxi">ТАКСИ</h3>
+            <div class="content-item__descripton">
+                Также до офиса можно добраться на яндекс-такси, набрав адрес офиса в <a href="https://taxi.yandex.ru/#index"> приложении. </a>
+            </div>
+        </div>
+</div>
+<div class="contact-content" id="contact-4">
+        <button class="button--close" type="button"></button>
+        <div class="content-item">
+                <div class="address__city">г. Таганрог</div>
+                <address class="address">“Интех”<br>
+                        Греческая улица, 104А</address>
+            <h3 class="content-item__title  content-item__icon--taxi">ТАКСИ</h3>
+            <div class="content-item__descripton">
+                Также до офиса можно добраться на яндекс-такси, набрав адрес офиса в <a href="https://taxi.yandex.ru/#index"> приложении. </a>
+            </div>
+        </div>
+</div>
+</div>
+
+//= templates/footer.html
+<script>
+    var script = document.createElement('script');
+    script.src = '/scripts/page/products.js';
+    document.body.appendChild(script);
+</script>
