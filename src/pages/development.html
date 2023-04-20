@@ -1,0 +1,148 @@
+//= templates/header.html
+<script>
+    var link = document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.type = 'text/css';
+    link.href = '/styles/education-styles.css';
+    document.head.appendChild(link);
+</script>
+<article class="article article--page page--sub-page">
+    <div class="hero hero--panel">
+        <div class="container hero__inner">
+            <div class="hero__info">
+                <div class="hero-wrapper">
+                    <h1 class="hero__title particle-title">Почему стоит работать с нами?</h1>
+                    <a class="hero__logo-company" href="javascript:void(0);" title="mos.ru"><object type="image/svg+xml" data="images/icons/logo-mos.svg"></object>mos.ru</a>
+                </div>
+                <span class="hero__date-realization">Время реализации: август 2016 - по настоящее время</span>
+                <div class="hero__company">Разработка</div>
+                <p class="legend">Разработка – это возможность повысить компетенцию и использовать накопленные знания и опыт для построения взаимовыгодных отношений и разработки совместных решений для ключевых заказчиков.</p>
+                <div class="button-wrapper">
+                    <a href="#form1" class="button button--orange">Стать партнером</a>
+                </div>
+                <div class="product-single" href="javascript:void(0);">
+                    <div class="panel">
+                        <picture class="panel__image">
+                            <source srcset="images/products/education@2x.webp 1x,
+                                                images/products/education@2x.webp 2x,
+                                                images/products/education@3x.webp 3x" type="image/webp">
+                            <img src="images/products/education.png"
+                                        srcset="images/products/education@2x.png 2x"
+                                        srcset="images/products/education@3x.png 3x"
+                                        alt="Графика для Стажировки">
+                        </picture>
+                            <div class="panel__plane"></div>
+                            <div class="panel__shadow"></div>
+                            <div class="panel__text">
+                                <span>
+                                Повысьте доступность ваших сервисов.<br>
+                                Управление ИТ-инфраструктурой станет увлекательной задачей: автоматизируйте процессы технической поддержки
+                                и наблюдайте за всем этим с экрана мобильного телефона
+                            </span>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__image">
+            </div>
+        </div>
+    </div>
+    <div class="container list-counter list-counter--blue">
+        <div class="article__page">
+            <div class="article__content">
+                <div class="content-block">
+                    <!-- <h2 class="list-counter__item">Что даёт стажировка?</h2> -->
+                    <p class="content-block__text">Мы ценим и уважаем наших партнеров и нацелены на долгосрочное сотрудничество. Нашим партнерам мы предоставляем информационную и техническую поддержку, а также многочисленные дополнительные преимущества в рамках программы. Партнерам предоставляют технические консультации по возникающим вопросам, а также проводят занятия по обучению технических специалистов и менеджеров по продажам. Мы приглашаем к сотрудничеству как физических, так и юридических лиц, желающих развиваться совместно с нашей компанией и открыть для себя новый источник получения интересных инновационных заказов.</p>
+                        <p class="legend">Надеемся на успешное и взаимовыгодное сотрудничество!</p>
+                    </div>
+                    <div class="wide-slider">
+                            <div class="wide-slider__inner">
+                                <div class="wide-slider-slick" id="wide-slider">
+                                    <div class="wide-slider__slide-wrapper">
+                                        <div class="wide-slider__slide">
+                                            <img alt="Сотрудники на корпоративе" src="../images/career/image-career-2.jpg">
+                                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="content-block">
+                        <h2 class="list-counter__item">Остались вопросы?</h2>
+                        <div class="legend">
+                            <span>Напишите нам:</span>
+                            <a href="mailto:sales@rospartner.ru"><br>sales@rospartner.ru</a>
+                        </div>
+                    </div>
+                </div>
+                <aside class="article__sidebar sidebar">
+                    <img class="sidebar__image" src="images/education/sidebar-image.svg" alt="Графика">
+            </aside>
+            </div>
+        </div>
+        <section class="form-section">
+            <form class="form form--normal form--work">
+                <div class="container container--small">
+                    <h2>Работа у нас</h2>
+                    <p>Чтобы откликнуться на вакансию, заполните форму. Мы свяжемся с вами ближайшее время.</p>
+                    <select class="input-container input-container--select input-container--select-blue" name="" id="work">
+                        <option value="0" selected>Работа</option>
+                        <option value="1">Стажировка</option>
+                    </select>
+                    <select class="input-container input-container--select input-container--select-blue" name="" id="vac">
+                        <option value="" hidden disabled selected>Вакансии</option>
+                        <option value="1">Инженер-тестировщик</option>
+                        <option value="2">Программист</option>
+                        <option value="3">Оператор</option>
+                    </select>
+                    <select class="input-container input-container--select input-container--select-blue" name="" id="train">
+                        <option value="" hidden disabled selected>Направления стажировки</option>
+                        <option value="1">Разработка</option>
+                        <option value="2">Техническая поддержка</option>
+                        <option value="3">Прочее</option>
+                    </select>
+                    <label class="input-container">
+                        <input type="text" placeholder="1" name="name" required title="имя" minlength="3" maxlength="150">
+                        <span>ФИО</span>
+                    </label>
+                    <label class="input-container">
+                        <input type="tel" placeholder="1" name="tel" required>
+                        <span>Телефон</span>
+                    </label>
+                    <label class="input-container">
+                        <input type="email" placeholder="1" name="mail" required maxlength="100">
+                        <span>Электронная почта</span>
+                    </label>
+                    <label class="input-container input-container--textarea">
+                        <textarea name="message"></textarea>
+                        <span>Сопроводительное письмо</span>
+                    </label>
+                    <label class="input-container input-container--file" id="vacancy__drop_zone">
+                        <input type="file" id="files" class="visually-hidden" name="files multiple">
+                        <div id="input-container--file-name">Добавьте резюме<mark>Вы можете перетащить или загрузить файл</mark></div>
+                        <output id="input-container--file-list"></output>
+                    </label>
+
+                    <div class="checkbox-container-wrapper">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="visually-hidden" required>
+                            <span>
+                                Согласен на&nbsp;<a href="../files/ppd.pdf" target="_blank" title="Согласие на обработку персональных данных">
+                                    обработку моих персональных данных</a>
+                            </span>
+                        </label>
+                    </div>
+                        <button class="button button--blue" type="submit">Отправить заявку</button>
+                    <div class="form__error-message">
+                        <span>Произошла ошибка при отправке, попробуйте обновить страницу и заполнить заново</span>
+                    </div>
+                    <div class="form__success-message">
+                        <span>Вы успешно отправили заявку. Наши специалисты свяжутся с вами в ближайшее время!</span>
+                    </div>
+                    <div class="form__loading-message">
+                        <span>Загрузка...</span>
+                    </div>
+                </div>
+            </form>
+    </section>
+</article>
+//= templates/footer.html

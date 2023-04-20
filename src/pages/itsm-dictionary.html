@@ -1,0 +1,358 @@
+//= templates/header.html
+
+<script>
+	var link = document.createElement('link');
+	link.setAttribute('rel', 'stylesheet');
+	link.type = 'text/css';
+	link.href = '/styles/itsm-dictionary-styles.css';
+	document.head.appendChild(link);
+</script>
+
+<script>
+	var modalDictionaryTemplate = [
+		'<form class="form form--normal">',
+		'<div class="container container--small">',
+		'<h2>Добавить новое слово</h2>',
+		'<p>Для того чтобы добавить новое слово в IT словарь роспартнера, заполните все поля формы, после чего ваше слово будет отправлено на рассмотрение. Когда ваше слово будет добавлено в словарь, то вам придет уведомление на почту.</p>',
+		'<label class="input-container">',
+		'<input type="text" placeholder="1" title="имя" minlength="3" maxlength="150">',
+		'<span>Слово</span>',
+		'</label>',
+		'<label class="input-container">',
+		'<input type="text" placeholder="1" required>',
+		'<span>Ссылка на источник</span>',
+		'</label>',
+		' <label class="input-container input-container--textarea">',
+		'<textarea></textarea>',
+		'<span>Комментарий</span>',
+		'</label>',
+		'<label class="input-container">',
+		'<input type="email" placeholder="1" required>',
+		'<span>Электронная почта</span>',
+		'</label>',
+		'<div class="form__error-message">',
+		'<span>Произошла ошибка при отправке, попробуйте обновить страницу и заполнить заново</span>',
+		'</div>',
+		'<div class="form__success-message">',
+		'<span>Вы успешно отправили слово!</span>',
+		'</div>',
+		'<div class="form__loading-message">',
+		'<span>Загрузка...</span>',
+		'</div>',
+		'</div>',
+		'<button class="button button--blue" type="submit">Отправить заявку</button>',
+		'</form>'
+	].join("\r\n");
+	var modalFeedbackTemplate = [
+        '<form action="" class="form form--light">',
+        '<div class="container container--small">',
+        '<h2>Заказать обратный звонок</h2>',
+        '<p>Заполните форму, и мы свяжемся с Вами.</p>',
+        '<div class="form-wrapper">',
+        '<label class="input-container">',
+        '<input type="text" placeholder="Ваше имя">',
+        '<span>Ваше имя</span>',
+        '</label>',
+        '<label class="input-container">',
+        '<input type="email" placeholder="Электронная почта">',
+        '<span>Электронная почта</span>',
+        '</label>',
+        '<label class="input-container">',
+        '<input type="tel" placeholder="Телефон">',
+        '<span>Телефон</span>',
+        '</label>',
+        '<div class="checkbox-container-wrapper">',
+        '<label class="checkbox-container">',
+        '<input type="checkbox" class="visually-hidden" required>',
+        '<span>Согласен на&nbsp;<a href="../files/ppd.pdf" target="_blank" title="Согласие на обработку персональных данных">обработку моих персональных данных</a></span>',
+        '</label>',
+        '</div>',
+        '<button class="button button--blue" type="submit">Отправить заявку</button>',
+        '<div class="form__error-message">',
+        '<span>Произошла ошибка при отправке, попробуйте обновить страницу и заполнить заново</span>',
+        '</div>',
+        '<div class="form__success-message">',
+        '<span>Вы успешно отправили заявку. Наши специалисты свяжутся с вами в ближайшее время!</span>',
+        '</div>',
+        '<div class="form__loading-message">',
+        '<span>Загрузка...</span>',
+        '</div>',
+        '</div>',
+        '</div>',
+        '</form>',
+	].join("\r\n");
+	
+	console.log(1);
+</script>
+<article class="article article--page page--dictionary">
+	<div class="article__page container">
+		<div class="article__content">
+			<div class="content-block">
+				<h1 class="content-block__header ">it-словарь роспартнер</h1>
+				<div class="lang-block">
+					<nav>
+						<input type="radio" id="radio-eng" class="visually-hidden" name="lang" checked>
+						<label for="radio-eng"><span class="lang-block__button">eng</span></label>
+
+						<span>/</span>
+
+						<input type="radio" id="radio-rus" class="visually-hidden" name="lang">
+						<label for="radio-rus"><span class="lang-block__button">рус</span></label>
+
+						<ul class="nav-block nav-block--eng">
+							<li class="nav-block__list">
+								<a class="nav-block__link nav-block__link--active" href="#">A</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">B</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">C</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">D</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">H</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">G</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">K</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">L</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">M</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">N</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">O</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">P</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Q</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">R</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">S</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">T</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">U</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">V</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link nav-block__link--disable" tabindex="-1" href="#">W</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">X</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Y</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Z</a>
+							</li>
+						</ul>
+
+						<ul class="nav-block nav-block--rus">
+							<li class="nav-block__list">
+								<a class="nav-block__link nav-block__link--active" href="#">А</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Б</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">В</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Г</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Д</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Е</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Ж</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">З</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">И</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">К</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Л</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">М</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Н</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">О</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">П</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Р</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">С</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Т</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">У</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Ф</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Х</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Ц</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Ч</a>
+							</li>
+							<li class="nav-block__list nav-block__list--wide">
+								<a class="nav-block__link" href="#">Ш</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Щ</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Э</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Ю</a>
+							</li>
+							<li class="nav-block__list">
+								<a class="nav-block__link" href="#">Я</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+
+			<div class="content-block">
+                <div class="content-block__subject">Слова на букву <span id=nav-letter>А</span>:</div>
+
+                <h2 class="legend">Agile</h2>
+				<div class="terms content-block__text">
+					<p class="terms__definition">
+						(Эджайл, англ. - “гибкий”, исп. IT, бизнес)
+					</p>
+					<p class="terms__text">
+						Подход к разработке программного обеспечения, ориентированный на использование итеративной разработки, динамическое формирование требований и обеспечение их реализации в результате постоянного взаимодействия внутри самоорганизующихся рабочих групп, состоящих из специалистов различного профиля
+					</p>
+
+					<div class="article__badges">
+						<object type="owo/uwu" class="badge badge--news">
+							<a href="/products/it-manage/" title="Найти похожие">
+								<span>Умные системы управления IT</span>
+							</a>
+						</object>
+						<object type="owo/uwu" class="badge badge--event">
+							<a href="/products/client/" title="Найти похожие">
+								<span>RPA</span>
+							</a>
+						</object>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-block content-block--bottom-offset">
+				<h2 class="legend">AIOps</h2>
+				<div class="terms content-block__text">
+					<p class="terms__definition">
+						Artificial Intelligence for IT Operations)
+					</p>
+					<p class="terms__text">
+						Искусственный интеллект для управления ИТ на базе многослойной платформы, который автоматизирует обработку данных и принятие решения с помощью машинного обучения и аналитики больших данных, которые приходят с различных элементов ИТ-инфраструктуры в режиме реального времени
+					</p>
+
+					<div class="article__badges">
+						<object type="owo/uwu" class="badge badge--news">
+							<a href="/services/outsourcing/" title="Найти похожие">
+								<span>Аутсорсинг</span>
+							</a>
+						</object>
+						<object type="owo/uwu" class="badge badge--event">
+							<a href="/products/it-manage/service-monitor/" title="Перейти на страницу услуги">
+								<span>Сервис-монитор</span>
+							</a>
+						</object>
+						<object type="owo/uwu" class="badge badge--event">
+							<a href="/products/client/portal-support/" title="Перейти на страницу услуги">
+								<span>Поддержка пользователей</span>
+							</a>
+						</object>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-block content-block--bottom-offset search-result-block">
+				<p class="search-result">Результаты поиска:</p>
+				<p class="search-result search-result--false">Такого слова пока нет в нашем словаре</p>
+				<a href="#" class="button button--blue"><pre>ПРЕДЛОЖИТЬ СЛОВО <span id="new-word">АПМАВАР</span></pre></a>
+			</div>
+		</div>
+
+		<aside class="about__sidebar sidebar">
+			<div id="sidebar__item-to-fix">
+				<div class="search-wrapper">
+					<section class="search-result-sections-list-block">
+						<div class="search-result-sections-list-block__title">
+							IT-словарь роспартнер
+						</div>
+
+						<div class="container">
+							<div class="input-container-wrapper">
+
+								<label class="input-container input-container--search">
+									<input type="text" placeholder="1">
+									<span>Поиск слова</span>
+								</label>
+								<button class="input-container__search-button" title="Нажмите для поиска"><span>Найти</span></button>
+							</div>
+
+
+							<img class="itsm-dictionary-image" src="images/itsm-dictionary/book.svg" alt="Графика">
+
+
+							<div class="button-wrapper">
+								<a onclick="openDictionaryModal()" href="#feedback-form" class="button button--orange">ПРЕДЛОЖИТЬ СЛОВО</a>
+							</div>
+						</div>
+
+					</section>
+				</div>
+			</div>
+		</aside>
+	</div>
+</article>
+//= templates/footer.html
