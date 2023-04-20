@@ -1,0 +1,147 @@
+@import (reference) '../common/variables.less';
+
+// #region List
+
+// @list-counter-offset: 50px;
+// @list-counter
+
+.list-counter {
+    counter-reset: myCounter;
+    position: relative;
+
+    // background-color: #ccc;
+
+    &:before {
+        content: "";
+        z-index: 10;
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        bottom: 0;
+        top: 0;
+        // Сдвиг на половину ширины отступа
+        //fallback for ie
+        left: 30px;
+
+        @media @mq-desktop {
+            left: 40px;
+        }
+        left: @list-counter-left-position;
+        // Сдвиг на половоину своей ширины
+        transform: translateX(-50%);
+        // left: 26px;
+        background-image: url(../images/dots.svg);
+        background-repeat: repeat-y;
+        background-position: center;
+        background-size: contain;
+
+        @media @mq-phone {
+            display: none;
+        }
+    }
+
+    &.list-counter--both {
+        &:after {
+            content: "";
+            z-index: 10;
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            bottom: 0;
+            top: 0;
+            right: 30px;
+            right: @list-counter-right-position;
+            background-image: url(../images/dots.svg);
+        }
+
+        @media @mq-tablet {
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
+
+    }
+}
+
+.list-counter--none {
+    &:before,
+    &.list-counter--both:after,
+    .list-counter__item:after {
+        content: none;
+    }
+}
+
+
+
+.list-counter__item {
+    position: relative;
+
+    &:after {
+        counter-increment: myCounter;
+        content: counter(myCounter, decimal-leading-zero) " ";
+        color: white;
+        z-index: 150;
+        position: absolute;
+        .condensed;
+        font-size: @list-counter-item-size--fb;
+        font-size: @list-counter-item-size;
+        line-height: @list-counter-item-circle-size--fb;
+        line-height: @list-counter-item-circle-size;
+        width: @list-counter-item-circle-size--fb;
+        width: @list-counter-item-circle-size;
+        height: @list-counter-item-circle-size--fb;
+        height: @list-counter-item-circle-size;
+        // line-height: 68px;
+        background-image: url(../images/icons/list-circle.svg);
+        background-repeat: no-repeat;
+        display: inline-block;
+        text-align: center;
+        font-weight: 500;
+        top: 50%;
+        left: @list-counter-item-left-position--fb;
+        left: @list-counter-item-left-position;
+        transform: translate(-50%, -50%);
+        margin-left: calc(@content-block-left-offset * -1);
+
+        // @media @mq-desktop {
+        //     width: 50px;
+        //     height: 50px;
+        //     line-height: 52px;
+        //     left: 29px;
+        //     font-size: 21px;
+        // }
+
+        @media @mq-phone {
+            display: none;
+        }
+    }
+
+    h2& {
+        &:after {
+            top: 6px;
+            transform: none;
+
+            @media @mq-tablet {
+                top: 0;
+            }
+        }
+    }
+
+    .list-counter--both & {
+        &:nth-child(odd) {
+            &:after {
+                right: -6px;
+                left: auto;
+            }
+        }
+    }
+
+    .list-counter--blue & {
+        &:after {
+            color: #00B3EF;
+            background-image: url(../images/icons/list-circle--blue.svg);
+        }
+    }
+
+}

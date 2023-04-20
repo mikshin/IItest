@@ -1,0 +1,124 @@
+@import (reference) '../common/variables.less';
+
+.legend {
+    line-height: 128%; 
+    position: relative;
+    padding-left: @content-block-left-inner-offset--fb;
+    padding-left: @content-block-left-inner-offset;
+    max-width: 1080px; 
+    font-size: 22px;
+    .roboto;
+    margin: 0;
+    
+    @media @mq-tablet {
+        font-size: 18px;
+        // line-height: 26px;
+        // padding-left: 54px;
+        
+        &:before {
+            margin-top: 10px;
+        }
+    }
+    
+    @media @mq-phone {
+        font-size: 16px;
+        padding-left: 32px;
+    }
+    
+    .content-block & {
+        .condensed(600);
+
+        @meida @mq-not-desktop {
+            font-size: 24px;
+        }
+        color: @blue;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        height: 5px;
+        border-top: 2px solid @orange;
+        top: 0;
+        left: 0;
+        width: 67px;
+        margin-top: 13px;
+
+
+        @media @mq-tablet {
+            width: 36px;
+            margin-top: 12px;
+            
+        }
+
+        @media @mq-phone {
+            width: 20px;
+            margin-top: 8px;
+        }
+    }
+
+    &.legend--simple {
+        max-width: 50%;
+
+        &:before {
+            content: none;
+        }
+        @media @mq-sm-c-desktop {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @media @mq-phone {
+            // padding-left: 26px;
+        }
+    }
+
+    &.legend--full-width {
+        max-width: 100%;
+    }
+
+    .hero & {
+        
+    }
+
+    .hero & {
+        max-width: 620px;
+        font-size: 22px;
+        margin-top: @content-block-top-small-inner-offset--fb;
+        margin-top: @content-block-top-small-inner-offset;
+
+        color: @white;
+        margin-top: 52px;
+    
+        &:before {
+            border-color: @orange;
+        }
+
+        @media @mq-desktop {
+            font-size: 18px;
+            max-width: 440px;
+        }
+
+        @media @mq-phone {
+            font-size: 16px;
+        }
+
+        @media @mq-sm-desktop {
+            max-width: 100%;
+            padding-bottom: 0;
+        }
+    }    
+
+    .page--sidebar-navigation .hero & {
+        max-width: unset;
+    }
+}
+
+.content-block__legend {
+    margin-top: @content-block-top-small-inner-offset--fb;
+    margin-top: @content-block-top-small-inner-offset;
+
+    .icon-block + & {
+        margin-top: 0;
+    }
+}

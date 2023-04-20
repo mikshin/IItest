@@ -1,0 +1,170 @@
+@import (reference) '../common/variables.less';
+
+.press-block {
+    background: linear-gradient(90deg, #1349CF 0%, #055BE1 100%) #055BE1;
+    padding-top: 60px;
+
+    .call-to-action + & {
+        padding-bottom: 0;
+    }
+
+    .article--project {
+        .article__photo {
+            height: 260px !important;
+        }
+    
+        .article__info {
+            min-height: 150px;
+        }
+    }
+
+    &:not(.press-block--light) h2 {
+        color: #fff;
+        text-transform: none;
+    }
+
+    h2 {
+        @media @mq-xs-desktop {
+            padding-left: 45px;
+        }
+
+        @media (max-width: 870px) and @mq-not-tablet {
+            padding-left: 80px;
+        }
+
+        @media @mq-phone {
+            padding-left: 24px;
+        }
+
+        @media @mq-sm-phone {
+            padding-left: 30px;
+        }
+    }
+
+    .article-list.article-list--products-and-services {
+        .article__photo {
+            height: 420px!important;
+        }
+
+        .article__info {
+            height: 100px;
+        }
+
+        .article__title {
+            font-size: 24px;
+            line-height: 26px;
+	        max-height: 52px;
+        }
+    }
+
+    &.press-block--light {
+        background: @gray-light;
+
+        .press-page__subtitle-wrapper {
+            display: none;
+        }
+
+        .slick-dots {
+            button {
+                &:before {
+                    background-color: @blue-bright;
+                }
+            }
+        }
+
+        .button {
+            @media @mq-xs-desktop {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                max-width: 284px;
+            }
+
+            @media @mq-phone {
+                max-width: 248px;
+            }
+
+        }
+    }
+}
+
+
+.press-page__subtitle-wrapper,
+.press-block__subtitle-wrapper {
+    width: 100%;
+    position: relative;
+
+    @media @mq-sm-desktop {
+        padding-left: 0;
+    }
+
+    // @media @mq-xs-desktop {
+    //     padding-left: 80px;
+    // }
+
+    // @media @mq-tablet {
+    //     padding-left: 50px;
+    // }
+
+    h2,
+    h3 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        transform-origin: 0 100%;
+        transform: rotate(-90deg) translate(-100%, 0);
+        color: #7191E2;
+        text-transform: uppercase;
+        font-size: 50px;
+        font-weight: 600;
+        margin: 0;
+
+        @media @mq-sm-desktop {
+            position: relative;
+            left: auto;
+            bottom: auto;
+            transform: none;
+            margin-bottom: 20px;
+            font-size: 32px;
+            z-index: 1;
+            // padding-left: 80px;
+        }
+
+        @media @mq-phone {
+            font-size: 24px;
+            padding-left: 24px;
+        }
+    }
+
+    h2 {
+        @media @mq-xs-desktop {
+            padding-left: 64px;
+            z-index: 0;
+        }
+
+        @media @mq-phone {
+            padding-left: 32px;
+            z-index: 0;
+        }
+    }
+
+    h3 {
+        @media @mq-xs-desktop {
+            padding-left: 45px;
+        }
+
+        @media (max-width: 870px) and @mq-not-tablet {
+            padding-left: 80px;
+        }
+
+        @media @mq-phone {
+            padding-left: 24px;
+        }
+
+        @media @mq-sm-phone {
+            padding-left: 30px;
+        }
+    }
+}

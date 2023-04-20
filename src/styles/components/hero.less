@@ -1,0 +1,455 @@
+@import (reference) '../common/variables.less';
+
+// #region Hero
+.hero {
+    background: @gr-blue-violet;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+
+    @media @mq-desktop {
+        min-height: 55vw;
+    }
+    
+    @media @mq-not-tablet {
+        position: relative;
+        // overflow: hidden;
+        height: 90vh;
+        min-height: 720px;
+        
+        .article--page & {
+            background-color: #fff;
+        } 
+    }
+    
+    @media @mq-not-xs-desktop {
+    }
+    
+    // @media @mq-tablet {
+    //     min-height: 55vh;
+    // }
+
+    // .page--product &,
+    // .page--sub-page &
+    &.hero--panel {
+        @media @mq-sm-desktop {
+            height: auto;
+        }
+    }
+}
+.hero__inner {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    @media @mq-xs-desktop {
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+.hero__info {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: @content-block-top-inner-offset--fb;
+    padding-top: @content-block-top-inner-offset;
+    padding-left: @content-block-left-offset--fb;
+    padding-left: @content-block-left-offset;
+    padding-right: @content-block-right-offset--fb;
+    padding-right: @content-block-right-offset;
+    padding-bottom: @content-block-top-inner-offset--fb;
+    padding-bottom: @content-block-top-inner-offset;
+
+    .button-wrapper {
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        .button + .button {
+            margin-left: 20px;
+
+            @media @mq-tablet {
+                margin-left: 4px;
+                margin-top: 20px;
+            }
+
+            @media (min-width: 992px) and (max-width: 1080px) {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+
+        .button {
+            @media (min-width: 1054px) and (max-width: 1080px) {
+                margin-right: 20px;
+            }
+        }
+
+        .button--white {
+            border-color: #fff;
+            color: #fff;
+
+            &:hover {
+                border-color: transparent;
+
+                &:before {
+                    background: url(../images/icons/adobe.svg) no-repeat;
+                }
+            }
+        }
+    
+        @media @mq-phone {
+            text-align: center;
+        }
+    }
+
+    @media @mq-not-tablet-height { 
+        // padding-top: 20px;
+    }
+
+    @media @mq-desktop {
+    }
+
+    @media @mq-xs-desktop {
+        // padding: 32px;
+    }
+
+    .badge {
+        margin-bottom: 15px !important;
+    }
+}
+
+.page--product & {
+    .hero__title {
+        @media @mq-sm-c-desktop {
+            font-size: 48px;
+        }
+    }
+}
+
+.hero__title,
+.product-slide__title {
+    color: #fff;
+    padding-top: 196px;
+    padding-bottom: 30px;
+    margin: 0;
+}
+
+.hero__title {
+    padding-top: 30px;
+
+    @media @mq-desktop {
+        // .page--product &,
+        // .page--sub-page &
+        
+        .hero--panel & {
+            max-width: 50%;
+        }
+    }
+
+    @media @mq-sm-desktop {
+        // .page--product &,
+        // .page--sub-page & 
+        
+        .hero--panel & {
+            max-width: 100%;
+        }
+    }
+    
+    @media @mq-xs-desktop {
+        position: static;
+
+        
+    }
+
+    @media @mq-tablet {
+        margin-top: 0;
+        padding-bottom: 12px;
+        // text-transform: none;
+
+        // .page--product &,
+        // .page--sub-page & 
+        
+        .hero--panel & {
+            max-width: 100%;
+        }
+    }
+
+    @media @mq-phone {
+        text-align: center;
+    }
+}
+
+.hero__date-realization {
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 14px;
+    opacity: 0.5;
+    display: none;
+
+    @media @mq-phone {
+        font-size: 14px;
+    }
+}
+
+
+
+
+.hero__sub-title {
+    .condensed(700);
+    position: relative;
+    display: block;
+    max-width: 450px;
+    z-index: 1;
+    font-size: 20px;
+	line-height: 36px;
+    text-transform: uppercase;
+
+    @media @mq-tablet {
+        display: none;
+    }
+
+    span {
+        background: url(../images/presentatinon-link--bgc.svg);
+        padding-bottom: 4px;
+    }
+
+    // &:before {
+    //     content: "";
+    //     height: 12px;
+    //     // max-width: 350px;
+    //     width: 100%;
+    //     background-color: #FC8A23;
+    //     position: absolute;
+    //     z-index: -1; 
+    //     bottom: -1px;
+    //     left: 0;
+    // }
+}
+
+.hero-wrapper {
+    position: relative;
+
+    @media @mq-xs-desktop {
+        position: static;
+    }
+
+    .hero__logo-company {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        font-size: 0;
+        width: 100px;
+        height: 100px;
+        top: 13px;
+        transform: translateX(50%); 
+        background-color: transparent;
+        z-index: 20;
+
+        right: calc(@content-block-right-offset--fb ~'*' -1);
+        right: calc(@content-block-right-offset ~'*' -1);
+
+        @media @mq-tablet {
+            width: 80px;
+            height: 80px;
+        }
+
+        @media @mq-phone {
+            width: 52px;
+            height: 52px;
+        }
+
+        img {
+            .object-fit-contain;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media @mq-xs-desktop {
+            right: 26px;
+            top: 0;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+
+.hero__company {
+    font-size: 50px;
+    .condensed;
+    font-weight: 700;
+    color: @orange;
+    margin: 0;
+    padding-top: 6vh;
+
+    @media @mq-tablet {
+        padding-top: 1vh;
+    }
+
+    @media @mq-phone {
+        font-size: 20px;
+    }
+}
+
+
+.hero__image {
+    //TODO: Некорректно наследуется (лишний адаптив)
+    // &:extend(.sidebar);
+    width: 560px;
+    // background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+    // height: 100%;
+    // background-color: tomato;
+
+    @media @mq-desktop {
+        width: 30%;
+        // .page--product &,
+        // .page--sub-page &
+        .hero--panel & {
+            // display: none;
+            position: absolute;
+            right: 0;
+            top:0;
+            height: 100%;
+            z-index: -2;
+            width: 50%;
+        }
+    }
+
+    @media @mq-phone {
+        .hero--panel & {
+            width: 30%;
+        }
+    }
+    
+    @media @mq-xs-desktop {
+        width: 100%;
+        height: 360px; 
+    }
+
+    @media @mq-phone {
+        height: 200px;
+    }
+
+    &:before {
+        content: "";
+        height: 100%; 
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: @sidebar-full-width; 
+        background: linear-gradient(to bottom, #006ae1 0%, #1140BC 100%);
+        z-index: -1;
+
+        @media @mq-desktop {
+            // content: none;
+            width: 100%;
+        }
+    }
+
+    //TODO: Нужен ли он? Как делаем адаптив?
+    .hero__image-wrapper {
+        width: @sidebar-full-width;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        @media @mq-desktop {
+            position: relative;
+            width: 100%;
+            left: auto;
+            top: auto;
+            height: auto;
+            flex: 1;
+        }
+
+        @media @mq-xs-desktop {
+            width: 100%;
+            height: 360px;
+        }
+
+        @media @mq-phone {
+            height: 200px;
+        }
+    }
+}
+
+.hero--project {
+    .hero__info {
+        // padding-right: 100px;
+    }
+    .legend {
+        margin: 35px 0 0 0 !important;
+        // padding-right: 178px;
+    }
+}
+
+
+.hero--panel {
+    .badge,
+    .hero__logo-company,
+    .hero__date-realization {
+        display: none !important;
+    }
+}
+
+
+
+.hero--background-logo {
+    z-index: 1;
+    
+    .badge,
+    .hero__logo-company,
+    .hero__date-realization, 
+    .hero__image {
+        display: none !important;
+    }
+
+    &:after {
+        content: "";
+        height: 100%;    
+        width: 100%;
+        right: 0;
+        top: 0;
+        position: absolute;
+        width: @container-full-width; 
+        background: url(../images/career/background-logo.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 40%,100%;
+        z-index: -1;
+    }
+
+    &:before {
+        content: "";
+        height: 100%;
+        right: 0;
+        top: 0;
+        position: absolute;
+        width: @container-full-width; 
+        background: @gr-blue-violet-dark;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100%;
+        z-index: -1;
+    }
+}

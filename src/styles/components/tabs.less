@@ -1,0 +1,304 @@
+@import (reference) '../common/variables.less';
+
+.content-block--tabs {
+    display: block;
+    position: relative;
+    padding-top: 0;
+    padding-right: 0;
+
+    @media @mq-phone {
+        padding-left: 0;
+    }
+
+    .list-counter__item {
+        position: absolute;
+        top: 115px;
+        font-size: 0;
+
+        @media @mq-xs-desktop {
+            top: 55px;
+        }
+
+        @media @mq-tablet {
+            top: 35px;
+        }
+    }
+}
+
+.tabs {
+    position: relative;
+    background-color: @blue-brightest;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        background-color: @blue-brightest;
+        width: @main-offset-width;
+        right: calc(@main-offset-width * -1);
+        z-index: 1;
+
+        @media @mq-desktop {
+            content: none;
+        }
+    }
+
+    .tab {
+        display: none;
+        align-items: center;
+
+        @media @mq-sm-desktop {
+            flex-direction: column-reverse;
+        }
+
+        span {
+            display: block;
+            font-size: 18px;
+
+            @media @mq-phone {
+                font-size: 16px;
+            }
+
+            @media @mq-sm-phone {
+                font-size: 14px;
+            }
+        }
+
+        &.tab--active {
+            display: flex;
+        }
+    }
+
+    .tab__title {
+        margin: 0;
+        margin-bottom: 28px;
+        font-size: 24px;
+        .condensed;
+
+        @media @mq-tablet {
+            font-size: 22px;
+        }
+
+        @media @mq-phone {
+            font-size: 18px;
+        }
+
+        @media @mq-sm-phone {
+            font-size: 16px;
+        }
+    }
+
+    .tab__image {
+        width: 100%;
+        height: 100%;
+        .object-fit-contain;
+        z-index: 500;
+    }
+}
+
+.tabs__content {
+    display: flex;
+
+    // height: 683px;
+
+    // @media @mq-sm-desktop {
+    //     height: 860px;
+    // }
+
+    // @media @mq-xs-desktop {
+    //     height: 843px;
+    // }
+
+    // @media @mq-tablet {
+    //     height: 800px;
+    // }
+
+    @media @mq-sm-phone {
+        // height: 546px;
+        flex-direction: column;
+    }
+
+    .tab__content-text {
+        width: 50%;
+        padding: 20px 112px 0 168px;
+
+        @media @mq-sm-desktop {
+            width: 100%;
+            padding: 51px 90px 47px 100px;
+        }
+
+        @media @mq-tablet {
+            padding: 0px 113px 45px 100px;
+        }
+
+        @media @mq-phone {
+            padding: 51px 15px 35px 46px;
+        }
+    }
+
+    .tab__content-image {
+        min-height: 666px;
+
+        @media @mq-sm-desktop {
+            padding-top: 50px;
+        }
+
+        @media @mq-tablet {
+            min-height: 640px;
+        }
+
+        @media @mq-phone {
+            min-height: 0;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+    }
+}
+
+.tabs__buttons {
+    display: flex;
+    position: relative;
+    height: 260px;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    @media @mq-sm-desktop {
+        height: 220px;
+    }
+
+    @media @mq-xs-desktop {
+        height: 145px;
+    }
+
+    @media @mq-tablet {
+        height: 100px;
+    }
+
+    @media @mq-phone {
+        height: 80px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        background-color: @gray-light;
+        width: calc(@content-block-left-offset + @main-offset-width);
+        transform: translateX(-100%);
+        left: 0;
+
+        @media @mq-desktop {
+            width: @content-block-left-offset;
+        }
+
+        @media @mq-phone {
+            content: none;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: calc(100% + @main-offset-width * +1);
+        height: 1px;
+        bottom: 2px;
+        left: 0;
+        background-color: rgba(227, 229, 233, .3);
+        z-index: 2;
+
+        @media @mq-desktop {
+            width: 100%;
+        }
+    }
+}
+
+.tabs__button {
+    position: relative;
+    padding: 115px 30px 40px;
+    background: none;
+    border: none;
+    flex-basis: 0;
+    flex-grow: 1;
+    color: rgba(255, 255, 255, .5);
+    font-size: 47px;
+    .condensed;
+    cursor: pointer;
+
+    @media @mq-sm-desktop {
+        font-size: 2.4em;
+        padding-top: 85px;
+    }
+
+    @media @mq-xs-desktop {
+        padding: 60px 15px 20px;
+        font-size: 1.7em;
+    }
+
+    @media @mq-tablet {
+        padding: 40px 10px 14px 15px;
+        font-size: 1.2em;
+    }
+
+    @media @mq-phone {
+        padding: 25px 15px 10px;
+        font-size: 1.2em;
+    }
+
+    @media @mq-sm-phone {
+        padding: 30px 7px 15px;
+        font-size: 1em;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 5px;
+        left: 0;
+        bottom: 0;
+        background-color: @orange;
+        opacity: 0;
+        z-index: 3;
+    }
+
+    &:first-child {
+        padding-left: 60px;
+
+        @media @mq-tablet {
+            padding-left: 30px;
+        }
+
+        @media @mq-phone {
+            padding-left: 15px;
+        }
+
+        @media @mq-sm-phone {
+            padding-left: 7px;
+        }
+    }
+
+    &:hover {
+        transition: .3s;
+    }
+
+    &:hover,
+    &:focus {
+        color: #fff;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &.tabs__button--active {
+        color: #fff;
+    
+        &::before {
+            width: 100%;
+            transition: width .3s ease;
+            opacity: 1;
+        }
+    }
+}

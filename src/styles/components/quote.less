@@ -1,0 +1,189 @@
+@import (reference) '../common/variables.less';
+@quote-url: "../images/quote/quote.svg";
+
+// #region Quote
+.quote {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: @dark;  
+    padding-left: 0;
+    width: 100%;
+    &:extend(.light-blue-background all);
+
+    .content-block & {
+        margin-top: -40px;
+    }
+    
+    .content-block h2 + & {
+        margin-top: @content-block-top-small-inner-offset--fb;
+        margin-top: @content-block-top-small-inner-offset;
+    }
+
+    .hero & {
+        background: transparent;
+        color: @white;
+
+        &:before {
+            content: none;
+        }
+    }
+
+    &.quote--dark {
+        .quote__person {
+            display: none;
+        }
+    }
+
+    @media @mq-tablet {
+        font-size: 16px;
+        padding-right: 80px;
+    }
+
+    @media @mq-phone {
+        font-size: 14px;
+        padding-top: 30px;
+        padding-right: 20px;
+        padding-left: 16px;
+    }
+}
+
+.quote__text {
+    text-align: left;
+    padding-left: 75px;
+    padding-right: 30px;
+    position: relative;
+    line-height: 30px;
+    padding-top: 15px;
+
+    @media @mq-tablet {
+        padding-left: 50px;
+        line-height: 24px;
+    }
+
+    @media @mq-phone {
+        padding-top: 30px;
+        padding-left: 30px;
+        line-height: 22px;
+    }
+
+    &:before {
+        content: "";
+        background-image: url(@quote-url);
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        top: 0;
+        left: 0;
+
+        @media @mq-tablet {
+            width: 25px;
+            height: 25px;
+        }
+
+        @media @mq-phone {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    .quote--simple & {
+        padding-left: 0;
+        padding-top: 0;
+
+        &:before {
+            content: none;
+        }
+    }
+}
+
+.quote__person {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    
+
+    .hero & {
+        order: 4;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        @media @mq-tablet {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    
+        @media @mq-phone {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+
+    @media @mq-tablet {
+        margin-top: 40px;
+    }
+
+    @media @mq-phone {
+        margin-top: 20px;
+    }
+
+    .person__photo {
+        .object-fit-cover;
+        
+        border-radius: 50px;
+        
+        width: 100px;
+        height: 100px;
+        
+        .hero & {
+            @media @mq-not-tablet {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media @mq-tablet {
+            width: 80px;
+            height: 80px;
+        }
+
+        
+        @media @mq-phone {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .person__info {
+        padding-left: 26px;
+        padding-right: 20px;
+
+        .info__name {
+            font-size: 18px;
+            .condensed;
+            font-weight: bold;
+
+            @media @mq-tablet {
+                font-size: 16px;
+            }
+        }
+
+        .info__position {
+            font-size: 14px;
+            padding-top: 8px;
+
+            @media @mq-tablet {
+                font-size: 13px;
+            }
+
+            @media @mq-phone {
+                line-height: 18px;
+            }
+        }
+    }
+}
+// #endregion Quote

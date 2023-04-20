@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 238 484">
+  <defs>
+    <style>
+      .cls-1, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3, .cls-4 {
+        stroke: #00b3ef;
+      }
+
+      .cls-3 {
+        opacity: 0.1;
+      }
+
+      .cls-4 {
+        opacity: 0.3;
+      }
+
+      .cls-5 {
+        fill: #00b3ef;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="238" height="484"/>
+    </clipPath>
+  </defs>
+  <g id="Repeat_Grid_18" data-name="Repeat Grid 18" class="cls-2">
+    <g transform="translate(-38 -226)">
+      <g id="Symbol_2_1" data-name="Symbol 2 – 1" transform="translate(-19 -35)">
+        <path id="Path_10791" data-name="Path 10791" class="cls-3" d="M-2787.562,3104.4l167.414-342.445" transform="translate(2911 -2497)"/>
+        <g id="Group_5552" data-name="Group 5552" transform="translate(-32 66)">
+          <path id="Union_5" data-name="Union 5" class="cls-4" d="M2965.978-2207.889,2904-2343.024l61.978,135.135.073-.16-.073.16.073.16-.073-.16L2904-2072.753Zm168.814-341.735L2904-2343.7Z" transform="translate(-2811 2747.862)"/>
+          <circle id="Ellipse_75" data-name="Ellipse 75" class="cls-5" cx="4.5" cy="4.5" r="4.5" transform="translate(89 399)"/>
+          <circle id="Ellipse_76" data-name="Ellipse 76" class="cls-5" cx="4.5" cy="4.5" r="4.5" transform="translate(150 535)"/>
+          <circle id="Ellipse_77" data-name="Ellipse 77" class="cls-5" cx="4.5" cy="4.5" r="4.5" transform="translate(89 670)"/>
+          <circle id="Ellipse_920" data-name="Ellipse 920" class="cls-5" cx="4.5" cy="4.5" r="4.5" transform="translate(318 195)"/>
+        </g>
+        <path id="Path_10792" data-name="Path 10792" class="cls-3" d="M-2850.437,3237.534l59.637-99.986,171.113-374.667" transform="translate(2911 -2497)"/>
+      </g>
+    </g>
+  </g>
+</svg>
