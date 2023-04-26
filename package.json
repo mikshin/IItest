@@ -8,7 +8,7 @@
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.10.0",
-    "i": "^0.3.6"
+    "i": "^0.3.7"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
