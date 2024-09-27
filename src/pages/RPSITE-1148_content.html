@@ -1,0 +1,1179 @@
+//= templates/header.html
+<script>
+    var link = document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.type = 'text/css';
+    link.href = '/styles/product-styles.css';
+    document.head.appendChild(link);
+</script>
+<script>
+    var modalImageTemplate;
+    var modalFeedbackTemplate = [
+        '<form action="" class="form form--light">',
+        '<div class="container container--small">',
+        '<h2>Заказать обратный звонок</h2>',
+        '<p>Заполните форму, и мы свяжемся с Вами.</p>',
+        '<div class="form-wrapper">',
+        '<label class="input-container">',
+        '<input type="text" placeholder="Ваше имя">',
+        '<span>Ваше имя</span>',
+        '</label>',
+        '<label class="input-container">',
+        '<input type="email" placeholder="Электронная почта">',
+        '<span>Электронная почта</span>',
+        '</label>',
+        '<label class="input-container">',
+        '<input type="tel" placeholder="Телефон">',
+        '<span>Телефон</span>',
+        '</label>',
+        '<div class="checkbox-container-wrapper">',
+        '<label class="checkbox-container">',
+        '<input type="checkbox" class="visually-hidden" required>',
+        '<div class="contract">',
+        '<span class="contract__text">Согласен на&nbsp;</span>',
+        '<a href="../files/ppd.pdf" target="_blank" title="Согласие на обработку персональных данных">обработку моих персональных данных</a></div>',
+        '</label>',
+        '</div>',
+        '<button class="button button--blue" type="submit">Отправить заявку</button>',
+        '<div class="form__error-message">',
+        '<span>Произошла ошибка при отправке, попробуйте обновить страницу и заполнить заново</span>',
+        '</div>',
+        '<div class="form__success-message">',
+        '<span>Вы успешно отправили заявку. Наши специалисты свяжутся с вами в ближайшее время!</span>',
+        '</div>',
+        '<div class="form__loading-message">',
+        '<span>Загрузка...</span>',
+        '</div>',
+        '</div>',
+        '</div>',
+        '</form>',
+    ].join("\r\n");
+</script>
+<article class="article article--page page--product">
+    <div class="hero hero--panel">
+        <div class="container hero__inner">
+            <div class="hero__info">
+                <h1 class="hero__title">
+                    Сервис-монитор
+                </h1>
+                <div class="hero__sub-title"><span>Платформа управления метриками <br>и событиями Сервис-Монитор</span>
+                </div>
+                <div class="button-wrapper">
+                    <a href="#feedback-form" class="button button--orange">Связаться с нами</a>
+                </div>
+                <div class="product-single product--1" href="javascript:void(0);">
+                    <div class="panel">
+                        <!-- <div class="resource resource--moving">
+                            <div class="resource__pipe resource__pipe--left"></div>
+                            <div class="resource__pipe resource__pipe--center"></div>
+                            <div class="resource__pipe resource__pipe--right"></div>
+                        </div> -->
+                        <div class="panel__title"><span>Клиентский сервис</span></div>
+                        <!-- <div class="panel__image"></div> -->
+                        <picture class="panel__image">
+                            <source srcset="images/products/sm.webp 1x,
+                                            images/products/sm@2x.webp 2x,
+                                            images/products/sm@3x.webp 3x" type="image/webp">
+                            <img src="images/products/sm.png" srcset="images/products/sm@2x.png 2x"
+                                srcset="images/products/sm@3x.png 3x"
+                                alt="Графика с описанием работы продукта Сервис-Монитор">
+                        </picture>
+                        <div class="panel__plane"></div>
+                        <div class="panel__shadow"></div>
+                        <div class="panel__text">
+                            <span>
+                                Повысьте доступность ваших сервисов.<br>
+                                Управление ИТ-инфраструктурой станет увлекательной задачей: автоматизируйте процессы
+                                технической поддержки
+                                и наблюдайте за всем этим с экрана мобильного телефона
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__image"></div>
+        </div>
+    </div>
+
+
+    <div class="container list-counter list-counter--blue">
+        <div class="article__page">
+            <div class="article__content">
+                <div class="article__content">
+                    <!--            Блок “У кого это работает” Вставить только логотипы организаций-->
+                    <div class="content-block">
+                        <h2 class="list-counter__item">У кого это работает</h2>
+                        <div class="icon-block icon-block--icons icon-block--two-columns icon-block--logos">
+                            <div class="icon-block__item ">
+                                <picture class="icon">
+                                    <img src="../images/logo/department-color.svg" alt="ДИТ Москвы">
+                                </picture>
+                            </div>
+                            <div class="icon-block__item ">
+                                <picture class="icon">
+                                    <img src="../images/logo/moek-color.svg" alt="МОЭК">
+                                </picture>
+                            </div>
+                            <div class="icon-block__item">
+                                <picture class="icon">
+                                    <img src="../images/logo/transoil-color.svg" alt="Транснефть">
+                                </picture>
+                            </div>
+                            <div class="icon-block__item">
+                                <picture class="icon ">
+                                    <img src="../images/logo/tplusgroup-color.svg" alt="T+Group">
+                                </picture>
+                            </div>
+                            <div class="icon-block__item">
+                                <picture class="icon">
+                                    <img src="../images/logo/moscow-gov-color.svg"
+                                        alt="Правительство московской области">
+                                </picture>
+                                <!--                                                    <div class="description">-->
+                                <!--                                                        Т+ Group                                            </div>-->
+                            </div>
+                            <div class="icon-block__item">
+                                <picture class="icon">
+                                    <img src="../images/logo/megafon-color.svg" alt="Мегафон">
+                                </picture>
+                                <!--                                                    <div class="description">-->
+                                <!--                                                        Мегафон                                            </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--            Добавить блок “Нам доверяют” с логотипами ДИТ, Правительства Московской обл., г. Дубна и университета Дубна
+                            -->
+                    <div class="content-block">
+                        <h2 class="list-counter__item">Нам доверяют</h2>
+                        <div class="icon-block icon-block--icons icon-block--two-columns icon-block--logos">
+                            <div class="icon-block__item ">
+                                <picture class="icon">
+                                    <img src="../images/logo/department-color.svg" alt="ДИТ Москвы">
+                                </picture>
+                            </div>
+                            <div class="icon-block__item">
+                                <picture class="icon">
+                                    <img src="../images/logo/moscow-gov-color.svg"
+                                        alt="Правительство московской области">
+                                </picture>
+                            </div>
+                            <div class="icon-block__item">
+                                <picture class="icon">
+                                    <img src="../images/logo/dubna-city.svg" alt="Город Дубна">
+                                </picture>
+                            </div>
+                            <div class="icon-block__item">
+                                <picture class="icon">
+                                    <img src="../images/logo/dubna-university.svg" alt="Университет Дубна">
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--            На ноутбуке (13) шрифты смотрятся очень огромными-->
+                </div>
+            </div>
+            <aside class="article__sidebar sidebar">
+                <img class="sidebar__image" src="images/product/sidebar-image.svg" alt="Графика">
+            </aside>
+        </div>
+
+        <div class="article__page">
+            <div class="article__content">
+
+                <div class="content-block">
+                    <h2 class="list-counter__item">Наши достижения</h2>
+                    <div class="icon-block icon-block--icons icon-block--two-columns icon-block--card">
+                        <a class="icon-block__item ">
+                            <div class="icon">
+                                <img src="images/main-page/elipse-innovation-of-year.svg" alt="">
+                            </div>
+                            <div class="description">
+                                <span class="description__title">Премия “Инновация года”</span>
+                                <p class="description__content">Компания «Роспартнер» стала
+                                    лауреатом премии <strong>«Инновация года 2018»</strong>,
+                                    представив решение «Сервис-монитор».</p>
+                            </div>
+                        </a>
+                        <a class="icon-block__item ">
+                            <div class="icon icon--sk">
+                                <img src="images/main-page/elipse-Skolkovo.png" alt="">
+                            </div>
+                            <div class="description">
+                                <span class="description__title">Резиденты Сколкова</span>
+                                <p class="description__content">В 2019 году «Роспартнер» представил экспертам
+                                    инновационного центра «Сколково» платформу «МОНК».</p>
+                            </div>
+                        </a>
+                        <a class="icon-block__item ">
+                            <div class="icon icon--runet">
+                                <img src="images/main-page/elipse-runet.svg" alt="">
+                            </div>
+                            <div class="description">
+                                <span class="description__title">3 премии Рунета</span>
+                                <div class="description__content">
+                                    <ul class="content__list">
+                                        <li><strong>2013</strong> Технологии и инновации
+                                            Типовые порталы органов исполнительной власти г.Москвы</li>
+                                        <li><strong>2016</strong> Развитие региональных интернет-проектов
+                                            Подмосковный портал “Добродел”</li>
+                                        <li><strong>2018</strong> Государство и общество Портал Мэра Москвы.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="icon-block__item ">
+                            <div class="icon">
+                                <img src="images/main-page/elipse-RF-eagle.svg" alt="">
+                            </div>
+                            <div class="description">
+                                <span class="description__title">Реестр отечественного ПО: 2792</span>
+                                <p class="description__content">«Роспартнер» может предложить те продукты, которые,
+                                    во-первых, входят в реестр Минкомсвязи, а во-вторых, вполне конкурентоспособны на
+                                    фоне зарубежных аналогов.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- <div class="content-block">
+                                <h2 class="list-counter__item">ПРЕИМУЩЕСТВА</h2>
+                                <div class="icon-block icon-block--four-columns">
+                                    <div class="icon-block__item">
+                                        <div class="counter">
+                                            Снижение расходов
+                                        </div>
+                                        <div class="description">
+                                            Бот с легкостью заменит работу трех сотрудников и сократит время процесса на 60%
+                                        </div>
+                                    </div>
+                                    <div class="icon-block__item">
+                                        <div class="counter">
+                                            Масштабируемость
+                                        </div>
+                                        <div class="description">
+                                            Отсутствует необходимость обучать новых сотрудников. Расширение бизнеса пройдет без увеличения операционных затрат
+                                        </div>
+                                    </div>
+                                    <div class="icon-block__item">
+                                        <div class="counter">
+                                            Точность исполнения
+                                        </div>
+                                        <div class="description">
+                                            При работе практически полностью исключается "человеческий фактор"
+                                        </div>
+                                    </div>
+                                    <div class="icon-block__item">
+                                        <div class="counter">
+                                            Круглосуточная работа
+                                        </div>
+                                        <div class="description">
+                                            Роботы не берут отпуски и больничные. Им не нужны обеды и выходные
+                                        </div>
+                                    </div>
+                                </div>
+                        </div> -->
+                <div class="content-block">
+                    <h2 class="list-counter__item">Решения на базе продукта</h2>
+                    <div class="icon-block icon-block--icons icon-block--links">
+                        <a href="#" class="icon-block__item">
+                            <div class="icon">
+                                <img src="images/icons/hands.svg" alt="Иконка Автоматическое открытие тикетов">
+                            </div>
+                            <div class="description">
+                                Интерактивный помощник оператора </div>
+                        </a>
+                        <a href="#" class="icon-block__item">
+                            <div class="icon">
+                                <img src="images/icons/shedule.svg" alt="Иконка Автоматическое открытие тикетов">
+                            </div>
+                            <div class="description">
+                                Омниканальный сбор обращений </div>
+                        </a>
+                        <a href="#" class="icon-block__item">
+                            <div class="icon">
+                                <img src="images/icons/shedule.svg" alt="Иконка Автоматическое открытие тикетов">
+                            </div>
+                            <div class="description">
+                                Сервис-деск </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="content-block">
+                    <h2 class="list-counter__item">Почему мы?</h2>
+                    <div class="icon-block icon-block--four-columns">
+                        <div class="icon-block__item">
+                            <div class="counter">
+                                Российские
+                            </div>
+                            <div class="description">
+
+                            </div>
+                        </div>
+                        <div class="icon-block__item">
+                            <div class="counter">
+                                Высокий уровень
+                            </div>
+                            <div class="description">
+                                сервиса и клиентоориентированности
+                            </div>
+                        </div>
+                        <div class="icon-block__item">
+                            <div class="counter">
+                                Быстрое развитие
+                            </div>
+                            <div class="description">
+                                продуктов на основе потребностей клиентов
+                            </div>
+                        </div>
+                        <div class="icon-block__item">
+                            <div class="counter">
+                                Помощь
+                            </div>
+                            <div class="description">
+                                в подготовке проектной документации на всех этапах
+                            </div>
+                        </div>
+                        <div class="icon-block__item">
+                            <div class="counter">
+                                Умение
+                            </div>
+                            <div class="description">
+                                работать с большими заказчиками
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-block ">
+                    <h2 class="list-counter__item">Добавление картинки и списка с легендой</h2>
+                    <div class="content-block__row content-block__row--reverse">
+                        <div class="content-block__column">
+                            <p class="legend content-block__legend">Соцсеть компании</p>
+                            <div class="list">
+                                <ul class="list__content">
+                                    <li class="list__item"><span>Рабочие группы, проекты</span></li>
+                                    <li class="list__item"><span>Мгновенные сообщения и групповой бизнес-чат</span>
+                                    </li>
+                                    <li class="list__item"><span>Телефония</span></li>
+                                    <li class="list__item"><span>Внешние пользователи</span></li>
+                                    <li class="list__item"><span>Битрикс24.Почта</span></li>
+                                    <li class="list__item"><span>Живая лента</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="content-block__column">
+
+                            <div class="slider slider--ui slider--bitrix">
+                                <div class="slide">
+                                    <div class="slide__photo">
+                                        <div class="slide__photo-inner">
+                                            <picture>
+                                                <source srcset="images/bitrix/1.png 1x" type="image/webp">
+                                                <img src="images/bitrix/1.png" alt="Соцсеть компании">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <div class="content-block__row">
+                        <div class="content-block__column">
+                            <p class="legend content-block__legend">Онлайн-коммуникации с клиентами</p>
+                            <div class="list">
+                                <ul class="list__content">
+                                    <li class="list__item"><span>Цифровые каналы: Вконтакте, Facebook, Telegram и
+                                            мессенджеры, онлайн-чат на вашем сайте</span></li>
+                                    <li class="list__item"><span>Отвечайте клиентам быстро, качественно и
+                                            персонально.</span></li>
+                                    <li class="list__item"><span>Маршрутизация и очередь обращений</span></li>
+                                    <li class="list__item"><span>Виджет на сайт: три в одном</span></li>
+                                    <li class="list__item"><span>Оценка чатов клиентом</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="content-block__column">
+                            <div class="slider slider--ui slider--bitrix">
+                                <div class="slide">
+                                    <div class="slide__photo">
+                                        <div class="slide__photo-inner">
+                                            <picture>
+                                                <source srcset="images/bitrix/1.png 1x" type="image/webp">
+                                                <img src="images/bitrix/1.png" alt="CRM: клиенты и продажи">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <section class="feature-product light-blue-background">
+                        <div class="container container--small">
+                            <div class="article-list article-list--horizontal" id="product-feature">
+                                <a class="article article--page" href="javascript:void(0);" title="Новость">
+                                    <div class="article__icon">
+                                        <img src="images/product/business.svg" alt="Иконка Бизнес">
+                                    </div>
+                                    <div class="article__info">
+                                        <div class="article__title">
+                                            Прикладной
+                                        </div>
+                                        <div class="article__about">
+                                            На прикладном уровне находятся информационные системы и их компоненты,
+                                            участвующие в процессе оказания бизнес-услуг, т.е. ИТ-услуги поддерживающие
+                                            бизнес-сервисы.
+                                        </div>
+                                        <div class="article__subtitle">
+                                            Приуроченная ко Дню рождения компании Роспартнер
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="article  article--page" href="javascript:void(0);" title="Новость">
+                                    <div class="article__icon">
+                                        <img src="images/product/business.svg" alt="Иконка Бизнес">
+                                    </div>
+                                    <div class="article__info">
+                                        <div class="article__title">
+                                            Прикладной
+                                        </div>
+                                        <div class="article__about">
+                                            На прикладном уровне находятся информационные системы и их компоненты,
+                                            участвующие в процессе оказания бизнес-услуг, т.е. ИТ-услуги поддерживающие
+                                            бизнес-сервисы.
+                                        </div>
+                                        <div class="article__subtitle">
+                                            Приуроченная ко Дню рождения компании Роспартнер
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="article  article--page" href="javascript:void(0);" title="Новость">
+                                    <div class="article__icon">
+                                        <img src="images/product/business.svg" alt="Иконка Бизнес">
+                                    </div>
+                                    <div class="article__info">
+                                        <div class="article__title">
+                                            Прикладной
+                                        </div>
+                                        <div class="article__about">
+                                            На прикладном уровне находятся информационные системы и их компоненты,
+                                            участвующие в процессе оказания бизнес-услуг, т.е. ИТ-услуги поддерживающие
+                                            бизнес-сервисы.
+                                        </div>
+                                        <div class="article__subtitle">
+                                            Приуроченная ко Дню рождения компании Роспартнер
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="article  article--page" href="javascript:void(0);" title="Новость">
+                                    <div class="article__icon">
+                                        <img src="images/product/business.svg" alt="Иконка Бизнес">
+                                    </div>
+                                    <div class="article__info">
+                                        <div class="article__title">
+                                            Прикладной
+                                        </div>
+                                        <div class="article__about">
+                                            На прикладном уровне находятся информационные системы и их компоненты,
+                                            участвующие в процессе оказания бизнес-услуг, т.е. ИТ-услуги поддерживающие
+                                            бизнес-сервисы.
+                                        </div>
+                                        <div class="article__subtitle">
+                                            Приуроченная ко Дню рождения компании Роспартнер
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <section class="form-section">
+            <form id="feedback-form" action="" class="form form--light">
+                <div class="container container--small">
+                    <h2>Заказать обратный звонок</h2>
+                    <p>Заполните форму, чтобы наши менеджеры договорились с вами об удобном времени демонстрации системы
+                        у
+                        вас
+                        в офисе</p>
+                    <div class="form-wrapper">
+                        <label class="input-container">
+                            <input type="text" placeholder="Ваше имя">
+                            <span>Ваше имя</span>
+                        </label>
+                        <label class="input-container">
+                            <input type="email" placeholder="Электронная почта">
+                            <span>Электронная почта</span>
+                        </label>
+                        <label class="input-container">
+                            <input type="tel" placeholder="Телефон">
+                            <span>Телефон</span>
+                        </label>
+                        <div class="checkbox-container-wrapper">
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="visually-hidden" required>
+                                <div class="contract">
+                                    <span class="contract__text">Согласен на&nbsp;</span>
+                                    <a href="../files/ppd.pdf" target="_blank"
+                                        title="Согласие на обработку персональных данных">
+                                        обработку моих персональных данных</a>
+                                </div>
+                            </label>
+                        </div>
+                        <button class="button button--blue" type="submit">Отправить заявку</button>
+                        <div class="form__error-message">
+                            <span>Произошла ошибка при отправке, попробуйте обновить страницу и заполнить заново</span>
+                        </div>
+                        <div class="form__success-message">
+                            <span>Вы успешно отправили заявку. Наши специалисты свяжутся с вами в ближайшее
+                                время!</span>
+                        </div>
+                        <div class="form__loading-message">
+                            <span>Загрузка...</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- НОВЫЫЙ БЛОК -->
+        <section class="press-block">
+
+            <div class="container container--small">
+                <h2>Смотрите по теме</h2>
+                <div class="press-page__subtitle-wrapper">
+                    <h3>Проекты</h3>
+                </div>
+                <div class="article-list" id="projects">
+                    <a class="article article--project" href="javascript:void(0);" title="Мероприятие">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/kviz1.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                «Роспартнер» разработал и выпустил собственные продукты
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>18 марта 2018</span>
+                            </div>
+                            <div class="article__logo">
+                                <img src="../images/projects/dobrodel.png" alt="Логотип Добродел">
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+
+
+                    <a class="article article--project" href="javascript:void(0);" title="Мероприятие">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/kviz2.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Роспартнер сервисная и клиентоориентированная компания
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>30 января 2018</span>
+                            </div>
+                            <div class="article__logo">
+                                <img src="../images/projects/mos.png" alt="Логотип Правительства города Москвы">
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+
+                    <a class="article article--project" href="javascript:void(0);" title="Мероприятие">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/kviz1.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                «Роспартнер» разработал и выпустил собственные продукты
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>18 марта 2018</span>
+                            </div>
+                            <div class="article__logo">
+                                <img src="../images/projects/dobrodel.png" alt="Логотип Добродел">
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+
+
+                </div>
+                <div class="press-page__subtitle-wrapper">
+                    <h3>Мероприятия</h3>
+                </div>
+                <div class="article-list" id="events">
+                    <a class="article article--event" href="javascript:void(0);" title="Мероприятие">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/kviz1.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                «Роспартнер» разработал и выпустил собственные продукты
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>18 марта 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+
+
+                    <a class="article article--event" href="javascript:void(0);" title="Мероприятие">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/kviz2.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Роспартнер сервисная и клиентоориентированная компания
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>30 января 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+
+
+                </div>
+
+                <div class="press-page__subtitle-wrapper">
+                    <h3>Новости</h3>
+                </div>
+                <div class="article-list" id="news">
+                    <a class="article article--news " href="javascript:void(0);" title="Новость">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/oez.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Наш коллектив – это большая семья со своими традициями
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>17 ноября 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a class="article article--news " href="javascript:void(0);" title="Новость">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/photo.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                В компании существует график образовательных мероприятий
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>31 марта 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a class="article article--news " href="javascript:void(0);" title="Новость">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/photo1.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Подбору кадров мы уделяем особое внимание
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>29 октября 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a class="article article--news " href="javascript:void(0);" title="Новость">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/photo2.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                «Униформа» – комплексная система для автоматизации процесса поддержки пользователей
+                                информационных систем
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>29 мая 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a class="article article--news " href="javascript:void(0);" title="Новость">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/Rospartner_kviz_002.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Какими собственными продуктами гордится компания
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>1 апреля 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a class="article article--news " href="javascript:void(0);" title="Новость">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/oez.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                «Роспартнер» работает в отрасли, которая формирует наше будущее
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>11 апреля 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a class="article article--news " href="javascript:void(0);" title="Новость">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/oez.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                «Роспартнера» студенты университета «Дубна»
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>7 июня 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="press-page__subtitle-wrapper">
+                    <h3>Статьи</h3>
+                </div>
+                <div class="article-list" id="articles">
+                    <a class="article article--article " href="javascript:void(0);" title="Статья">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/kviz4.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Роспартнер получила благодарность от губернатора
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>15 февраля 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a class="article article--article " href="javascript:void(0);" title="Статья">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/kviz3.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Мы проводим «Инфонеделю»
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>25 февраля 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a class="article article--article " href="javascript:void(0);" title="Статья">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/kviz2.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Информация о компании и все открытые вакансии в Казани
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>25 июня 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a class="article article--article " href="javascript:void(0);" title="Статья">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/photo1.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                «Неважно, где работаешь, важно то, что над собой»
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>31 сентября 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a class="article article--article " href="javascript:void(0);" title="Статья">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/photo.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Мы ценим людей, которые хотят и могут ставить цели
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>15 марта 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a class="article article--article " href="javascript:void(0);" title="Статья">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/article/kviz1.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Big data, нейросеть, Machine learning (машинное обучение)
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>17 марта 2018</span>
+                            </div>
+                            <span class="badge" href="javascript:void(0);" title="Найти похожие">
+                                <span>Мероприятие</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <div class="press-page__subtitle-wrapper press-page__subtitle-wrapper--products-and-services">
+                    <h3>Продукты и услуги</h3>
+                </div>
+                <div class="article-list article-list--products-and-services" id="products">
+                    <a class="article article--project" href="javascript:void(0);"
+                        title="Наши умные системы управления">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/products-and-services/smart-systems.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Наши умные системы управления
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="article article--project" href="javascript:void(0);" title="Униформа">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/products-and-services/uniforms.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Униформа
+                            </div>
+                        </div>
+                    </a>
+
+
+                    <a class="article article--project" href="javascript:void(0);"
+                        title="Наши системы клиентского сервиса">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/products-and-services/client-service.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Наши системы клиентского сервиса
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="article article--project" href="javascript:void(0);" title="Решение бизнес‑задач">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/products-and-services/b2b.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Решение <br>бизнес‑задач
+                            </div>
+
+                        </div>
+                    </a>
+
+
+                    <a class="article article--project" href="javascript:void(0);" title="Аутсорсинг">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/products-and-services/outsorsing.jpg" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Аутсорсинг
+                            </div>
+
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Скрыто по согласованию -->
+        <section class="projects-preview" style="display:none;">
+            <div class="container container--small">
+                <h4>Смотрите по теме</h4>
+
+
+                <div class="article-list article-list--projects">
+                    <a class="article article--project" href="javascript:void(0);" title="Проект">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/projects/image-3.png" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Бизнес-встреча «Устойчивое управление ИТ-инфраструктурой 2018»
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>7 июня 2018</span>
+                            </div>
+                            <object type="owo/uwu" class="badge">
+                                <a href="/news.html" title="Найти похожие">
+                                    <span>Сервис-монитор</span>
+                                </a>
+                            </object>
+                            <div class="article__logo">
+                                <img src="../images/projects/nash-gorod.png" alt="Логотип Наш город">
+                            </div>
+                        </div>
+                    </a>
+                    <a class="article article--project" href="javascript:void(0);" title="Проект">
+                        <div class="article__photo">
+                            <div class="article__photo-inner">
+                                <img src="images/projects/image-4.png" alt="Фото для новости">
+                            </div>
+                        </div>
+                        <div class="article__info">
+                            <div class="article__title">
+                                Бизнес-встреча «Устойчивое управление ИТ-инфраструктурой 2018»
+                            </div>
+                            <div class="article__subtitle">
+                                Приуроченная ко Дню рождения компании Роспартнер
+                            </div>
+                            <div class="article__date">
+                                <span>7 июня 2018</span>
+                            </div>
+                            <object type="owo/uwu" class="badge">
+                                <a href="/news.html" title="Найти похожие">
+                                    <span>Сервис-монитор</span>
+                                </a>
+                            </object>
+                            <div class="article__logo">
+                                <img src="../images/projects/nash-gorod.png" alt="Логотип Наш город">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-services ">
+            <div class="container">
+                <h1>Продукты и услуги</h1>
+                <div class="products-list">
+                    <a class="products-list__item product--4" href="javascript:void(0);">
+                        <div class="panel">
+                            <div class="panel__title"><span>Клиентский сервис</span></div>
+                            <picture class="panel__image">
+                                <source srcset="images/products/client-service.webp 1x,
+                                                images/products/client-service@2x.webp 2x,
+                                                images/products/client-service@3x.webp 3x" type="image/webp">
+                                <img src="images/products/client-service.png"
+                                    srcset="images/products/client-service@2x.png 2x"
+                                    srcset="images/products/client-service@3x.png 3x"
+                                    alt="Графика с описанием работы продукта Сервси-Монитор">
+                            </picture>
+                            <div class="panel__shadow"></div>
+                        </div>
+                    </a>
+                    <a class="products-list__item product--3" href="javascript:void(0);">
+                        <div class="panel">
+                            <div class="panel__title"><span>Поддержка</span></div>
+                            <picture class="panel__image">
+                                <source srcset="images/products/support.webp 1x,
+                                                images/products/support@2x.webp 2x,
+                                                images/products/support@3x.webp 3x" type="image/webp">
+                                <img src="images/products/support.png" srcset="images/products/support@2x.png 2x"
+                                    srcset="images/products/support@3x.png 3x" alt="Графика для услуги Поддержка">
+                            </picture>
+                            <div class="panel__shadow"></div>
+                        </div>
+                    </a>
+                    <a class="products-list__item product--2" href="javascript:void(0);">
+                        <div class="panel">
+                            <div class="panel__title"><span>Решение бизнес-задач</span></div>
+                            <picture class="panel__image">
+                                <source srcset="images/products/b2b.webp 1x,
+                                                images/products/b2b@2x.webp 2x,
+                                                images/products/b2b@3x.webp 3x" type="image/webp">
+                                <img src="images/products/b2b.png" srcset="images/products/b2b@2x.png 2x"
+                                    srcset="images/products/b2b@3x.png 3x"
+                                    alt="Графика для услуги Решение бизнес-задач" />
+                            </picture>
+                            <div class="panel__shadow"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+</article>
+
+//= templates/footer.html
+<script>
+    var script = document.createElement('script');
+    script.src = '/scripts/page/products.js';
+    document.body.appendChild(script);
+
+    var scriptService = document.createElement('script');
+    scriptService.src = '/scripts/page/service-monitor.js';
+    document.body.appendChild(scriptService);
+</script>
